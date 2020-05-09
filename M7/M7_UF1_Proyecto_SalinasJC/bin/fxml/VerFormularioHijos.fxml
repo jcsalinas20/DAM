@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.VerFormularioHijos">
+   <children>
+      <TableView fx:id="tablaHijos" layoutX="25.0" layoutY="25.0" onMouseClicked="#windowsListener" onMouseMoved="#windowsListener" prefHeight="350.0" prefWidth="650.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columns>
+          <TableColumn fx:id="nombre" editable="false" prefWidth="115.0" text="Nombre" />
+          <TableColumn fx:id="apellidos" editable="false" prefWidth="237.0" text="Apellidos" />
+            <TableColumn fx:id="fecha" editable="false" prefWidth="124.0" text="Fecha Nacimiento" />
+            <TableColumn fx:id="sexo" editable="false" prefWidth="42.0" text="Sexo" />
+            <TableColumn fx:id="talla" editable="false" minWidth="7.0" prefWidth="92.0" text="Talla" />
+            <TableColumn fx:id="pies" editable="false" prefWidth="89.0" text="Pies" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

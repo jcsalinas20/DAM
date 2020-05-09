@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 20-ene-2020 17:53:45 by Hibernate Tools 5.4.7.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="bv" dynamic-insert="false" dynamic-update="false" mutable="true" name="objetos.Weapon" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="weapon">
+        <id name="weaponId" type="int">
+            <column name="weapon_id"/>
+            <generator class="assigned"/>
+        </id>
+        <property generated="never" lazy="false" name="name" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="name" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="type" optimistic-lock="true" type="string" unique="false">
+            <column length="30" name="type" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="damage" optimistic-lock="true" type="int" unique="false">
+            <column name="damage" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="accuracy" optimistic-lock="true" type="int" unique="false">
+            <column name="accuracy" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

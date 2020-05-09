@@ -1,0 +1,54 @@
+sprites.png
+size: 109, 450
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+sprite_0
+  rotate: false
+  xy: 0, 0
+  size: 109, 36
+  orig: 109, 36
+  offset: 0, 0
+  index: 0
+sprite_1
+  rotate: false
+  xy: 0, 36
+  size: 109, 37
+  orig: 109, 37
+  offset: 0, 0
+  index: 1
+sprite_2
+  rotate: false
+  xy: 0, 73
+  size: 109, 49
+  orig: 109, 49
+  offset: 0, 0
+  index: 2
+sprite_3
+  rotate: false
+  xy: 0, 122
+  size: 109, 62
+  orig: 109, 62
+  offset: 0, 0
+  index: 3
+sprite_4
+  rotate: false
+  xy: 0, 184
+  size: 109, 77
+  orig: 109, 77
+  offset: 0, 0
+  index: 4
+sprite_5
+  rotate: false
+  xy: 0, 261
+  size: 109, 91
+  orig: 109, 91
+  offset: 0, 0
+  index: 5
+sprite_6
+  rotate: false
+  xy: 0, 352
+  size: 109, 98
+  orig: 109, 98
+  offset: 0, 0
+  index: 6

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 20-ene-2020 17:53:45 by Hibernate Tools 5.4.7.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="bv" dynamic-insert="false" dynamic-update="false" mutable="true" name="objetos.Class" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="class">
+        <id name="classId" type="int">
+            <column name="class_id"/>
+            <generator class="assigned"/>
+        </id>
+        <property generated="never" lazy="false" name="className" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="class_name" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

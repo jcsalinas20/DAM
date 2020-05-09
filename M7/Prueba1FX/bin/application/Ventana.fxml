@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane minHeight="500.0" minWidth="500.0" prefHeight="325.0" prefWidth="11.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+   <children>
+      <RadioButton layoutX="312.0" layoutY="190.0" mnemonicParsing="false" text="Mujer">
+         <toggleGroup>
+            <ToggleGroup fx:id="sexo" />
+         </toggleGroup>
+      </RadioButton>
+      <TextField id="nombreID" fx:id="txtFnombre" alignment="CENTER" layoutX="158.0" layoutY="119.0" promptText="nombre" />
+      <Button fx:id="submit" layoutX="218.0" layoutY="403.0" mnemonicParsing="false" onMouseClicked="#buttonClicked" text="Submit" />
+      <TextField alignment="CENTER" layoutX="159.0" layoutY="256.0" promptText="email" />
+      <Label layoutX="129.0" layoutY="33.0" text="Datos Personales">
+         <font>
+            <Font name="Comic Sans MS Italic" size="31.0" />
+         </font>
+      </Label>
+      <RadioButton layoutX="129.0" layoutY="190.0" mnemonicParsing="false" text="Hombre" toggleGroup="$sexo" />
+      <CheckBox layoutX="155.0" layoutY="334.0" mnemonicParsing="false" text="Recibir emails de ofertas" />
+   </children>
+</AnchorPane>

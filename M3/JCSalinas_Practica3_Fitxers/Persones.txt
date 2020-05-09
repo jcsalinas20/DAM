@@ -1,0 +1,22 @@
+Nom: a
+Cognom: a
+NIF: a
+Edat: 1
+Altura: 1.0
+
+------------------
+Nom: b
+Cognom: b
+NIF: b
+Edat: 2
+Altura: 2.0
+
+------------------
+Nom: c
+Cognom: c
+NIF: c
+Edat: 50
+Altura: 3.0
+
+------------------
+fi

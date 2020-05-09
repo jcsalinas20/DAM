@@ -1,0 +1,1170 @@
+ate data = new Date(1306751122651L);
+No s’entrarà en més detall sobre com funciona aquesta classe. Si voleu, podeu mirar els seus
+mètodes a la documentació de l’API de Java.
+L’exemple següent mostra com funcionen aquests mètodes. Per provar-los, abans creeu un
+fitxer anomenat “Document.txt” a la carpeta “C:\Temp”. Inicialment, deixeu-lo buit i executeu
+el programa. Després, amb un editor de text, escriviu qualsevol cosa, deseu els canvis i torneu
+a executar el programa. Observeu com el resultat és diferent. Fixeu-vos també en l’ús de la
+classe Date per poder mostrar correctament la data en un format llegible.
+public class FileLlegirPropietats {
+public static void main(String[] args) {
+ FileLlegirPropietats programa = new FileLlegirPropietatDate data = new Date(1306751122651L);
+No s’entrarà en més detall sobre com funciona aquesta classe. Si voleu, podeu mirar els seus
+mètodes a la documentació de l’API de Java.
+L’exemple següent mostra com funcionen aquests mètodes. Per provar-los, abans creeu un
+fitxer anomenat “Document.txt” a la carpeta “C:\Temp”. Inicialment, deixeu-lo buit i executeu
+el programa. Després, amb un editor de text, escriviu qualsevol cosa, deseu els canvis i torneu
+a executar el programa. Observeu com el resultat és diferent. Fixeu-vos també en l’ús de la
+classe Date per poder mostrar correctament la data en un format llegible.
+public class FileLlegirPropietats {
+public static void main(String[] args) {
+ FileLlegirPropietats programa = new FileLlegirPropietats();
+ programa.inici();
+ }
+public void inici() {
+ File document = new File("C:/Temp/Document.txt");
+ System.out.println(document.getAbsoluteFile());
+ // S'usa el tipus composta Date per transformar mil·lisegons a data real
+ Date data = new Date(document.lastModified());
+ System.out.println("Darrera modificació: " + data);
+ System.out.println("Mida: " + document.length());
+ }
+}
+Gestió de fitxers 
+De ben segur, el conjunt d’operacions més habituals quan accediu a un sistema de fitxers en
+treballar en el vostre ordinador són les vinculades a la seva gestió directa: reanomenar fitxers,
+esborrar-los, copiar-los o moure’ls. Donat el nom d’una ruta, Java també permet realitzar
+aquestes accions.
+• boolean mkdir() permet crear una carpeta d’acord a la ubicació que indica la ruta. La
+ruta ha d’indicar el nom d’una carpeta que no existeix en el moment d’invocar el
+mètode. Concretament, es crea una carpeta amb el nom de la ruta (el darrer element
+del text), ubicada a la carpeta pare indicada (tot el text anterior). Si s’ha creat
+correctament, el mètode avalua true. En cas contrari, avalua false. Hi ha diversos
+motius pels quals pot fallar la creació, però normalment es deurà al fet que la ruta és
+incorrecta (algun dels elements no existeixen) o la carpeta ja existia.
+• boolean delete() esborra el fitxer o carpeta que indica la ruta. La ruta ha d’indicar el
+nom d’una carpeta que sí que existeix en el moment d’invocar el mètode. Igual com en
+l’anterior mètode, avalua true o false segons si l’operació realment s’ha pogut dur a
+terme. Els motius pels quals pot fallar són similars a l’anterior, si bé en el cas de les
+carpetes també pot fallar si no està buida. Només es pot esborrar una carpeta usant
+aquest mètode si dins seu no hi té res (ni altres carpetes ni fitxers).
+Per provar l’exemple que es mostra tot seguit de manera que es pugui veure com funcionen
+aquests mètodes, novament, cal una organització prèvia del sistema de fitxers. Primer,
+assegureu-vos que a l’arrel de la unitat “C:” no hi ha cap carpeta anomenada “Temp” i
+executeu el programa. Tot fallarà, ja que les rutes són incorrectes (no existeix “Temp”). Un cop
+fet, creeu la carpeta “Temp”, i a dins seu creeu un nou document anomenat “Document.txt”
+(que pot estar buit si voleu). Ara, en executar el programa, s’haurà creat una nova carpeta
+anomenada “Fotos”. Si sense tocar la carpeta “Temp” executeu el programa per tercer cop,
+ara tot s’haurà esborrat.
+import java.io.File;
+public class FileGestioElements {
+public static void main(String[] args) {
+ FileGestioElements programa = new FileGestioElements();
+ programa.inici();
+ }
+public void inici() {
+ File fotos = new File("C:/Temp/Fotos");
+ File document = new File("C:/Temp/Document.txt");
+ boolean resultat = fotos.mkdir();
+ System.out.println("Creada carpeta " + fotos.getName() + "? " + resultat);
+ if (!resultat) {
+ boolean delCarpeta = fotos.delete();
+ System.out.println("Esborrada carpeta " + fotos.getName() + "? " + delCarpeta);
+ boolean delFitxer = document.delete();
+ System.out.println("Esborrat fitxer " + document.getName() + "? " + delFitxer);
+ }
+ }
+}
+Des del punt de vista d’un sistema operatiu, l’operació de “moure” un fitxer o carpeta no és
+més que canviar el seu nom, des de la seva ruta original fins a una nova ruta destinació. Per fer
+això també hi ha un mètode, ja una mica més complex boolean renameTo(File desti).
+boolean renameTo(Date data = new Date(1306751122651L);
+No s’entrarà en més detall sobre com funciona aquesta classe. Si voleu, podeu mirar els seus
+mètodes a la documentació de l’API de Java.
+L’exemple següent mostra com funcionen aquests mètodes. Per provar-los, abans creeu un
+fitxer anomenat “Document.txt” a la carpeta “C:\Temp”. Inicialment, deixeu-lo buit i executeu
+el programa. Després, amb un editor de text, escriviu qualsevol cosa, deseu els canvis i torneu
+a executar el programa. Observeu com el resultat és diferent. Fixeu-vos també en l’ús de la
+classe Date per poder mostrar correctament la data en un format llegible.
+public class FileLlegirPropietats {
+public static void main(String[] args) {
+ FileLlegirPropietats programa = new FileLlegirPropietats();
+ programa.inici();
+ }
+public void inici() {
+ File document = new File("C:/Temp/Document.txt");
+ System.out.println(document.getAbsoluteFile());
+ // S'usa el tipus composta Date per transformar mil·lisegons a data real
+ Date data = new Date(document.lastModified());
+ System.out.println("Darrera modificació: " + data);
+ System.out.println("Mida: " + document.length());
+ }
+}
+Gestió de fitxers 
+De ben segur, el conjunt d’operacions més habituals quan accediu a un sistema de fitxers en
+treballar en el vostre ordinador són les vinculades a la seva gestió directa: reanomenar fitxers,
+esborrar-los, copiar-los o moure’ls. Donat el nom d’una ruta, Java també permet realitzar
+aquestes accions.
+• boolean mkdir() permet crear una carpeta d’acord a la ubicació que indica la ruta. La
+ruta ha d’indicar el nom d’una carpeta que no existeix en el moment d’invocar el
+mètode. Concretament, es crea una carpeta amb el nom de la ruta (el darrer element
+del text), ubicada a la carpeta pare indicada (tot el text anterior). Si s’ha creat
+correctament, el mètode avalua true. En cas contrari, avalua false. Hi ha diversos
+motius pels quals pot fallar la creació, però normalment es deurà al fet que la ruta és
+incorrecta (algun dels elements no existeixen) o la carpeta ja existia.
+• boolean delete() esborra el fitxer o carpeta que indica la ruta. La ruta ha d’indicar el
+nom d’una carpeta que sí que existeix en el moment d’invocar el mètode. Igual com en
+l’anterior mètode, avalua true o false segons si l’operació realment s’ha pogut dur a
+terme. Els motius pels quals pot fallar són similars a l’anterior, si bé en el cas de les
+carpetes també pot fallar si no està buida. Només es pot esborrar una carpeta usant
+aquest mètode si dins seu no hi té res (ni altres carpetes ni fitxers).
+Per provar l’exemple que es mostra tot seguit de manera que es pugui veure com funcionen
+aquests mètodes, novament, cal una organització prèvia del sistema de fitxers. Primer,
+assegureu-vos que a l’arrel de la unitat “C:” no hi ha cap carpeta anomenada “Temp” i
+executeu el programa. Tot fallarà, ja que les rutes són incorrectes (no existeix “Temp”). Un cop
+fet, creeu la carpeta “Temp”, i a dins seu creeu un nou document anomenat “Document.txt”
+(que pot estar buit si voleu). Ara, en executar el programa, s’haurà creat una nova carpeta
+anomenada “Fotos”. Si sense tocar la carpeta “Temp” executeu el programa per tercer cop,
+ara tot s’haurà esborrat.
+import java.io.File;
+public class FileGestioElements {
+public static void main(String[] args) {
+ FileGestioElements programa = new FileGestioElements();
+ programa.inici();
+ }
+public void inici() {
+ File fotos = new File("C:/Temp/Fotos");
+ File document = new File("C:/Temp/Document.txt");
+ boolean resultat = fotos.mkdir();
+ System.out.println("Creada carpeta " + fotos.getName() + "? " + resultat);
+ if (!resultat) {
+ boolean delCarpeta = fotos.delete();
+ System.out.println("Esborrada carpeta " + fotos.getName() + "? " + delCarpeta);
+ boolean delFitxer = document.delete();
+ System.out.println("Esborrat fitxer " + document.getName() + "? " + delFitxer);
+ }
+ }
+}
+Des del punt de vista d’un sistema operatiu, l’operació de “moure” un fitxer o carpeta no és
+més que canviar el seu nom, des de la seva ruta original fins a una nova ruta destinació. Per fer
+això també hi ha un mètode, ja una mica més complex boolean renameTo(File desti).
+boolean renameTo(Date data = new Date(1306751122651L);
+No s’entrarà en més detall sobre com funciona aquesta classe. Si voleu, podeu mirar els seus
+mètodes a la documentació de l’API de Java.
+L’exemple següent mostra com funcionen aquests mètodes. Per provar-los, abans creeu un
+fitxer anomenat “Document.txt” a la carpeta “C:\Temp”. Inicialment, deixeu-lo buit i executeu
+el programa. Després, amb un editor de text, escriviu qualsevol cosa, deseu els canvis i torneu
+a executar el programa. Observeu com el resultat és diferent. Fixeu-vos també en l’ús de la
+classe Date per poder mostrar correctament la data en un format llegible.
+public class FileLlegirPropietats {
+public static void main(String[] args) {
+ FileLlegirPropietats programa = new FileLlegirPropietats();
+ programa.inici();
+ }
+public void inici() {
+ File document = new File("C:/Temp/Document.txt");
+ System.out.println(document.getAbsoluteFile());
+ // S'usa el tipus composta Date per transformar mil·lisegons a data real
+ Date data = new Date(1306751122651L);
+No s’entrarà en més detall sobre com funciona aquesta classe. Si voleu, podeu mirar els seus
+mètodes a la documentació de l’API de Java.
+L’exemple següent mostra com funcionen aquests mètodes. Per provar-los, abans creeu un
+fitxer anomenat “Document.txt” a la carpeta “C:\Temp”. Inicialment, deixeu-lo buit i executeu
+el programa. Després, amb un editor de text, escriviu qualsevol cosa, deseu els canvis i torneu
+a executar el programa. Observeu com el resultat és diferent. Fixeu-vos també en l’ús de la
+classe Date per poder mostrar correctament la data en un format llegible.
+public class FileLlegirPropietats {
+public static void main(String[] args) {
+ FileLlegirPropietats programa = new FileLlegirPropietatDate data = new Date(1306751122651L);
+No s’entrarà en més detall sobre com funciona aquesta classe. Si voleu, podeu mirar els seus
+mètodes a la documentació de l’API de Java.
+L’exemple següent mostra com funcionen aquests mètodes. Per provar-los, abans creeu un
+fitxer anomenat “Document.txt” a la carpeta “C:\Temp”. Inicialment, deixeu-lo buit i executeu
+el programa. Després, amb un editor de text, escriviu qualsevol cosa, deseu els canvis i torneu
+a executar el programa. Observeu com el resultat és diferent. Fixeu-vos també en l’ús de la
+classe Date per poder mostrar correctament la data en un format llegible.
+public class FileLlegirPropietats {
+public static void main(String[] args) {
+ FileLlegirPropietats programa = new FileLlegirPropietats();
+ programa.inici();
+ }
+public void inici() {
+ File document = new File("C:/Temp/Document.txt");
+ System.out.println(document.getAbsoluteFile());
+ // S'usa el tipus composta Date per transformar mil·lisegons a data real
+ Date data = new Date(document.lastModified());
+ System.out.println("Darrera modificació: " + data);
+ System.out.println("Mida: " + document.length());
+ }
+}
+Gestió de fitxers 
+De ben segur, el conjunt d’operacions més habituals quan accediu a un sistema de fitxers en
+treballar en el vostre ordinador són les vinculades a la seva gestió directa: reanomenar fitxers,
+esborrar-los, copiar-los o moure’ls. Donat el nom d’una ruta, Java també permet realitzar
+aquestes accions.
+• boolean mkdir() permet crear una carpeta d’acord a la ubicació que indica la ruta. La
+ruta ha d’indicar el nom d’una carpeta que no existeix en el moment d’invocar el
+mètode. Concretament, es crea una carpeta amb el nom de la ruta (el darrer element
+del text), ubicada a la carpeta pare indicada (tot el text anterior). Si s’ha creat
+correctament, el mètode avalua true. En cas contrari, avalua false. Hi ha diversos
+motius pels quals pot fallar la creació, però normalment es deurà al fet que la ruta és
+incorrecta (algun dels elements no existeixen) o la carpeta ja existia.
+• boolean delete() esborra el fitxer o carpeta que indica la ruta. La ruta ha d’indicar el
+nom d’una carpeta que sí que existeix en el moment d’invocar el mètode. Igual com en
+l’anterior mètode, avalua true o false segons si l’operació realment s’ha pogut dur a
+terme. Els motius pels quals pot fallar són similars a l’anterior, si bé en el cas de les
+carpetes també pot fallar si no està buida. Només es pot esborrar una carpeta usant
+aquest mètode si dins seu no hi té res (ni altres carpetes ni fitxers).
+Per provar l’exemple que es mostra tot seguit de manera que es pugui veure com funcionen
+aquests mètodes, novament, cal una organització prèvia del sistema de fitxers. Primer,
+assegureu-vos que a l’arrel de la unitat “C:” no hi ha cap carpeta anomenada “Temp” i
+executeu el programa. Tot fallarà, ja que les rutes són incorrectes (no existeix “Temp”). Un cop
+fet, creeu la carpeta “Temp”, i a dins seu creeu un nou document anomenat “Document.txt”
+(que pot estar buit si voleu). Ara, en executar el programa, s’haurà creat una nova carpeta
+anomenada “Fotos”. Si sense tocar la carpeta “Temp” executeu el programa per tercer cop,
+ara tot s’haurà esborrat.
+import java.io.File;
+public class FileGestioElements {
+public static void main(String[] args) {
+ FileGestioElements programa = new FileGestioElements();
+ programa.inici();
+ }
+public void inici() {
+ File fotos = new File("C:/Temp/Fotos");
+ File document = new File("C:/Temp/Document.txt");
+ boolean resultat = fotos.mkdir();
+ System.out.println("Creada carpeta " + fotos.getName() + "? " + resultat);
+ if (!resultat) {
+ boolean delCarpeta = fotos.delete();
+ System.out.println("Esborrada carpeta " + fotos.getName() + "? " + delCarpeta);
+ boolean delFitxer = document.delete();
+ System.out.println("Esborrat fitxer " + document.getName() + "? " + delFitxer);
+ }
+ }
+}
+Des del punt de vista d’un sistema operatiu, l’operació de “moure” un fitxer o carpeta no és
+més que canviar el seu nom, des de la seva ruta original fins a una nova ruta destinació. Per fer
+això també hi ha un mètode, ja una mica més complex boolean renameTo(File desti).
+boolean renameTo(Date data = new Date(1306751122651L);
+No s’entrarà en més detall sobre com funciona aquesta classe. Si voleu, podeu mirar els seus
+mètodes a la documentació de l’API de Java.
+L’exemple següent mostra com funcionen aquests mètodes. Per provar-los, abans creeu un
+fitxer anomenat “Document.txt” a la carpeta “C:\Temp”. Inicialment, deixeu-lo buit i executeu
+el programa. Després, amb un editor de text, escriviu qualsevol cosa, deseu els canvis i torneu
+a executar el programa. Observeu com el resultat és diferent. Fixeu-vos també en l’ús de la
+classe Date per poder mostrar correctament la data en un format llegible.
+public class FileLlegirPropietats {
+public static void main(String[] args) {
+ FileLlegirPropietats programa = new FileLlegirPropietats();
+ programa.inici();
+ }
+public void inici() {
+ File document = new File("C:/Temp/Document.txt");
+ System.out.println(document.getAbsoluteFile());
+ // S'usa el tipus composta Date per transformar mil·lisegons a data real
+ Date data = new Date(document.lastModified());
+ System.out.println("Darrera modificació: " + data);
+ System.out.println("Mida: " + document.length());
+ }
+}
+Gestió de fitxers 
+De ben segur, el conjunt d’operacions més habituals quan accediu a un sistema de fitxers en
+treballar en el vostre ordinador són les vinculades a la seva gestió directa: reanomenar fitxers,
+esborrar-los, copiar-los o moure’ls. Donat el nom d’una ruta, Java també permet realitzar
+aquestes accions.
+• boolean mkdir() permet crear una carpeta d’acord a la ubicació que indica la ruta. La
+ruta ha d’indicar el nom d’una carpeta que no existeix en el moment d’invocar el
+mètode. Concretament, es crea una carpeta amb el nom de la ruta (el darrer element
+del text), ubicada a la carpeta pare indicada (tot el text anterior). Si s’ha creat
+correctament, el mètode avalua true. En cas contrari, avalua false. Hi ha diversos
+motius pels quals pot fallar la creació, però normalment es deurà al fet que la ruta és
+incorrecta (algun dels elements no existeixen) o la carpeta ja existia.
+• boolean delete() esborra el fitxer o carpeta que indica la ruta. La ruta ha d’indicar el
+nom d’una carpeta que sí que existeix en el moment d’invocar el mètode. Igual com en
+l’anterior mètode, avalua true o false segons si l’operació realment s’ha pogut dur a
+terme. Els motius pels quals pot fallar són similars a l’anterior, si bé en el cas de les
+carpetes també pot fallar si no està buida. Només es pot esborrar una carpeta usant
+aquest mètode si dins seu no hi té res (ni altres carpetes ni fitxers).
+Per provar l’exemple que es mostra tot seguit de manera que es pugui veure com funcionen
+aquests mètodes, novament, cal una organització prèvia del sistema de fitxers. Primer,
+assegureu-vos que a l’arrel de la unitat “C:” no hi ha cap carpeta anomenada “Temp” i
+executeu el programa. Tot fallarà, ja que les rutes són incorrectes (no existeix “Temp”). Un cop
+fet, creeu la carpeta “Temp”, i a dins seu creeu un nou document anomenat “Document.txt”
+(que pot estar buit si voleu). Ara, en executar el programa, s’haurà creat una nova carpeta
+anomenada “Fotos”. Si sense tocar la carpeta “Temp” executeu el programa per tercer cop,
+ara tot s’haurà esborrat.
+import java.io.File;
+public class FileGestioElements {
+public static void main(String[] args) {
+ FileGestioElements programa = new FileGestioElements();
+ programa.inici();
+ }
+public void inici() {
+ File fotos = new File("C:/Temp/Fotos");
+ File document = new File("C:/Temp/Document.txt");
+ boolean resultat = fotos.mkdir();
+ System.out.println("Creada carpeta " + fotos.getName() + "? " + resultat);
+ if (!resultat) {
+ boolean delCarpeta = fotos.delete();
+ System.out.println("Esborrada carpeta " + fotos.getName() + "? " + delCarpeta);
+ boolean delFitxer = document.delete();
+ System.out.println("Esborrat fitxer " + document.getName() + "? " + delFitxer);
+ }
+ }
+}
+Des del punt de vista d’un sistema operatiu, l’operació de “moure” un fitxer o carpeta no és
+més que canviar el seu nom, des de la seva ruta original fins a una nova ruta destinació. Per fer
+això també hi ha un mètode, ja una mica més complex boolean renameTo(File desti).
+boolean renameTo(Date data = new Date(1306751122651L);
+No s’entrarà en més detall sobre com funciona aquesta classe. Si voleu, podeu mirar els seus
+mètodes a la documentació de l’API de Java.
+L’exemple següent mostra com funcionen aquests mètodes. Per provar-los, abans creeu un
+fitxer anomenat “Document.txt” a la carpeta “C:\Temp”. Inicialment, deixeu-lo buit i executeu
+el programa. Després, amb un editor de text, escriviu qualsevol cosa, deseu els canvis i torneu
+a executar el programa. Observeu com el resultat és diferent. Fixeu-vos també en l’ús de la
+classe Date per poder mostrar correctament la data en un format llegible.
+public class FileLlegirPropietats {
+public static void main(String[] args) {
+ FileLlegirPropietats programa = new FileLlegirPropietats();
+ programa.inici();
+ }
+public void inici() {
+ File document = new File("C:/Temp/Document.txt");
+ System.out.println(document.getAbsoluteFile());
+ // S'usa el tipus composta Date per transformar mil·lisegons a data real
+ Date data = new Date(1306751122651L);
+No s’entrarà en més detall sobre com funciona aquesta classe. Si voleu, podeu mirar els seus
+mètodes a la documentació de l’API de Java.
+L’exemple següent mostra com funcionen aquests mètodes. Per provar-los, abans creeu un
+fitxer anomenat “Document.txt” a la carpeta “C:\Temp”. Inicialment, deixeu-lo buit i executeu
+el programa. Després, amb un editor de text, escriviu qualsevol cosa, deseu els canvis i torneu
+a executar el programa. Observeu com el resultat és diferent. Fixeu-vos també en l’ús de la
+classe Date per poder mostrar correctament la data en un format llegible.
+public class FileLlegirPropietats {
+public static void main(String[] args) {
+ FileLlegirPropietats programa = new FileLlegirPropietatDate data = new Date(1306751122651L);
+No s’entrarà en més detall sobre com funciona aquesta classe. Si voleu, podeu mirar els seus
+mètodes a la documentació de l’API de Java.
+L’exemple següent mostra com funcionen aquests mètodes. Per provar-los, abans creeu un
+fitxer anomenat “Document.txt” a la carpeta “C:\Temp”. Inicialment, deixeu-lo buit i executeu
+el programa. Després, amb un editor de text, escriviu qualsevol cosa, deseu els canvis i torneu
+a executar el programa. Observeu com el resultat és diferent. Fixeu-vos també en l’ús de la
+classe Date per poder mostrar correctament la data en un format llegible.
+public class FileLlegirPropietats {
+public static void main(String[] args) {
+ FileLlegirPropietats programa = new FileLlegirPropietats();
+ programa.inici();
+ }
+public void inici() {
+ File document = new File("C:/Temp/Document.txt");
+ System.out.println(document.getAbsoluteFile());
+ // S'usa el tipus composta Date per transformar mil·lisegons a data real
+ Date data = new Date(document.lastModified());
+ System.out.println("Darrera modificació: " + data);
+ System.out.println("Mida: " + document.length());
+ }
+}
+Gestió de fitxers 
+De ben segur, el conjunt d’operacions més habituals quan accediu a un sistema de fitxers en
+treballar en el vostre ordinador són les vinculades a la seva gestió directa: reanomenar fitxers,
+esborrar-los, copiar-los o moure’ls. Donat el nom d’una ruta, Java també permet realitzar
+aquestes accions.
+• boolean mkdir() permet crear una carpeta d’acord a la ubicació que indica la ruta. La
+ruta ha d’indicar el nom d’una carpeta que no existeix en el moment d’invocar el
+mètode. Concretament, es crea una carpeta amb el nom de la ruta (el darrer element
+del text), ubicada a la carpeta pare indicada (tot el text anterior). Si s’ha creat
+correctament, el mètode avalua true. En cas contrari, avalua false. Hi ha diversos
+motius pels quals pot fallar la creació, però normalment es deurà al fet que la ruta és
+incorrecta (algun dels elements no existeixen) o la carpeta ja existia.
+• boolean delete() esborra el fitxer o carpeta que indica la ruta. La ruta ha d’indicar el
+nom d’una carpeta que sí que existeix en el moment d’invocar el mètode. Igual com en
+l’anterior mètode, avalua true o false segons si l’operació realment s’ha pogut dur a
+terme. Els motius pels quals pot fallar són similars a l’anterior, si bé en el cas de les
+carpetes també pot fallar si no està buida. Només es pot esborrar una carpeta usant
+aquest mètode si dins seu no hi té res (ni altres carpetes ni fitxers).
+Per provar l’exemple que es mostra tot seguit de manera que es pugui veure com funcionen
+aquests mètodes, novament, cal una organització prèvia del sistema de fitxers. Primer,
+assegureu-vos que a l’arrel de la unitat “C:” no hi ha cap carpeta anomenada “Temp” i
+executeu el programa. Tot fallarà, ja que les rutes són incorrectes (no existeix “Temp”). Un cop
+fet, creeu la carpeta “Temp”, i a dins seu creeu un nou document anomenat “Document.txt”
+(que pot estar buit si voleu). Ara, en executar el programa, s’haurà creat una nova carpeta
+anomenada “Fotos”. Si sense tocar la carpeta “Temp” executeu el programa per tercer cop,
+ara tot s’haurà esborrat.
+import java.io.File;
+public class FileGestioElements {
+public static void main(String[] args) {
+ FileGestioElements programa = new FileGestioElements();
+ programa.inici();
+ }
+public void inici() {
+ File fotos = new File("C:/Temp/Fotos");
+ File document = new File("C:/Temp/Document.txt");
+ boolean resultat = fotos.mkdir();
+ System.out.println("Creada carpeta " + fotos.getName() + "? " + resultat);
+ if (!resultat) {
+ boolean delCarpeta = fotos.delete();
+ System.out.println("Esborrada carpeta " + fotos.getName() + "? " + delCarpeta);
+ boolean delFitxer = document.delete();
+ System.out.println("Esborrat fitxer " + document.getName() + "? " + delFitxer);
+ }
+ }
+}
+Des del punt de vista d’un sistema operatiu, l’operació de “moure” un fitxer o carpeta no és
+més que canviar el seu nom, des de la seva ruta original fins a una nova ruta destinació. Per fer
+això també hi ha un mètode, ja una mica més complex boolean renameTo(File desti).
+boolean renameTo(Date data = new Date(1306751122651L);
+No s’entrarà en més detall sobre com funciona aquesta classe. Si voleu, podeu mirar els seus
+mètodes a la documentació de l’API de Java.
+L’exemple següent mostra com funcionen aquests mètodes. Per provar-los, abans creeu un
+fitxer anomenat “Document.txt” a la carpeta “C:\Temp”. Inicialment, deixeu-lo buit i executeu
+el programa. Després, amb un editor de text, escriviu qualsevol cosa, deseu els canvis i torneu
+a executar el programa. Observeu com el resultat és diferent. Fixeu-vos també en l’ús de la
+classe Date per poder mostrar correctament la data en un format llegible.
+public class FileLlegirPropietats {
+public static void main(String[] args) {
+ FileLlegirPropietats programa = new FileLlegirPropietats();
+ programa.inici();
+ }
+public void inici() {
+ File document = new File("C:/Temp/Document.txt");
+ System.out.println(document.getAbsoluteFile());
+ // S'usa el tipus composta Date per transformar mil·lisegons a data real
+ Date data = new Date(document.lastModified());
+ System.out.println("Darrera modificació: " + data);
+ System.out.println("Mida: " + document.length());
+ }
+}
+Gestió de fitxers 
+De ben segur, el conjunt d’operacions més habituals quan accediu a un sistema de fitxers en
+treballar en el vostre ordinador són les vinculades a la seva gestió directa: reanomenar fitxers,
+esborrar-los, copiar-los o moure’ls. Donat el nom d’una ruta, Java també permet realitzar
+aquestes accions.
+• boolean mkdir() permet crear una carpeta d’acord a la ubicació que indica la ruta. La
+ruta ha d’indicar el nom d’una carpeta que no existeix en el moment d’invocar el
+mètode. Concretament, es crea una carpeta amb el nom de la ruta (el darrer element
+del text), ubicada a la carpeta pare indicada (tot el text anterior). Si s’ha creat
+correctament, el mètode avalua true. En cas contrari, avalua false. Hi ha diversos
+motius pels quals pot fallar la creació, però normalment es deurà al fet que la ruta és
+incorrecta (algun dels elements no existeixen) o la carpeta ja existia.
+• boolean delete() esborra el fitxer o carpeta que indica la ruta. La ruta ha d’indicar el
+nom d’una carpeta que sí que existeix en el moment d’invocar el mètode. Igual com en
+l’anterior mètode, avalua true o false segons si l’operació realment s’ha pogut dur a
+terme. Els motius pels quals pot fallar són similars a l’anterior, si bé en el cas de les
+carpetes també pot fallar si no està buida. Només es pot esborrar una carpeta usant
+aquest mètode si dins seu no hi té res (ni altres carpetes ni fitxers).
+Per provar l’exemple que es mostra tot seguit de manera que es pugui veure com funcionen
+aquests mètodes, novament, cal una organització prèvia del sistema de fitxers. Primer,
+assegureu-vos que a l’arrel de la unitat “C:” no hi ha cap carpeta anomenada “Temp” i
+executeu el programa. Tot fallarà, ja que les rutes són incorrectes (no existeix “Temp”). Un cop
+fet, creeu la carpeta “Temp”, i a dins seu creeu un nou document anomenat “Document.txt”
+(que pot estar buit si voleu). Ara, en executar el programa, s’haurà creat una nova carpeta
+anomenada “Fotos”. Si sense tocar la carpeta “Temp” executeu el programa per tercer cop,
+ara tot s’haurà esborrat.
+import java.io.File;
+public class FileGestioElements {
+public static void main(String[] args) {
+ FileGestioElements programa = new FileGestioElements();
+ programa.inici();
+ }
+public void inici() {
+ File fotos = new File("C:/Temp/Fotos");
+ File document = new File("C:/Temp/Document.txt");
+ boolean resultat = fotos.mkdir();
+ System.out.println("Creada carpeta " + fotos.getName() + "? " + resultat);
+ if (!resultat) {
+ boolean delCarpeta = fotos.delete();
+ System.out.println("Esborrada carpeta " + fotos.getName() + "? " + delCarpeta);
+ boolean delFitxer = document.delete();
+ System.out.println("Esborrat fitxer " + document.getName() + "? " + delFitxer);
+ }
+ }
+}
+Des del punt de vista d’un sistema operatiu, l’operació de “moure” un fitxer o carpeta no és
+més que canviar el seu nom, des de la seva ruta original fins a una nova ruta destinació. Per fer
+això també hi ha un mètode, ja una mica més complex boolean renameTo(File desti).
+boolean renameTo(Date data = new Date(1306751122651L);
+No s’entrarà en més detall sobre com funciona aquesta classe. Si voleu, podeu mirar els seus
+mètodes a la documentació de l’API de Java.
+L’exemple següent mostra com funcionen aquests mètodes. Per provar-los, abans creeu un
+fitxer anomenat “Document.txt” a la carpeta “C:\Temp”. Inicialment, deixeu-lo buit i executeu
+el programa. Després, amb un editor de text, escriviu qualsevol cosa, deseu els canvis i torneu
+a executar el programa. Observeu com el resultat és diferent. Fixeu-vos també en l’ús de la
+classe Date per poder mostrar correctament la data en un format llegible.
+public class FileLlegirPropietats {
+public static void main(String[] args) {
+ FileLlegirPropietats programa = new FileLlegirPropietats();
+ programa.inici();
+ }
+public void inici() {
+ File document = new File("C:/Temp/Document.txt");
+ System.out.println(document.getAbsoluteFile());
+ // S'usa el tipus composta Date per transformar mil·lisegons a data real
+ Date data = new Date(1306751122651L);
+No s’entrarà en més detall sobre com funciona aquesta classe. Si voleu, podeu mirar els seus
+mètodes a la documentació de l’API de Java.
+L’exemple següent mostra com funcionen aquests mètodes. Per provar-los, abans creeu un
+fitxer anomenat “Document.txt” a la carpeta “C:\Temp”. Inicialment, deixeu-lo buit i executeu
+el programa. Després, amb un editor de text, escriviu qualsevol cosa, deseu els canvis i torneu
+a executar el programa. Observeu com el resultat és diferent. Fixeu-vos també en l’ús de la
+classe Date per poder mostrar correctament la data en un format llegible.
+public class FileLlegirPropietats {
+public static void main(String[] args) {
+ FileLlegirPropietats programa = new FileLlegirPropietatDate data = new Date(1306751122651L);
+No s’entrarà en més detall sobre com funciona aquesta classe. Si voleu, podeu mirar els seus
+mètodes a la documentació de l’API de Java.
+L’exemple següent mostra com funcionen aquests mètodes. Per provar-los, abans creeu un
+fitxer anomenat “Document.txt” a la carpeta “C:\Temp”. Inicialment, deixeu-lo buit i executeu
+el programa. Després, amb un editor de text, escriviu qualsevol cosa, deseu els canvis i torneu
+a executar el programa. Observeu com el resultat és diferent. Fixeu-vos també en l’ús de la
+classe Date per poder mostrar correctament la data en un format llegible.
+public class FileLlegirPropietats {
+public static void main(String[] args) {
+ FileLlegirPropietats programa = new FileLlegirPropietats();
+ programa.inici();
+ }
+public void inici() {
+ File document = new File("C:/Temp/Document.txt");
+ System.out.println(document.getAbsoluteFile());
+ // S'usa el tipus composta Date per transformar mil·lisegons a data real
+ Date data = new Date(document.lastModified());
+ System.out.println("Darrera modificació: " + data);
+ System.out.println("Mida: " + document.length());
+ }
+}
+Gestió de fitxers 
+De ben segur, el conjunt d’operacions més habituals quan accediu a un sistema de fitxers en
+treballar en el vostre ordinador són les vinculades a la seva gestió directa: reanomenar fitxers,
+esborrar-los, copiar-los o moure’ls. Donat el nom d’una ruta, Java també permet realitzar
+aquestes accions.
+• boolean mkdir() permet crear una carpeta d’acord a la ubicació que indica la ruta. La
+ruta ha d’indicar el nom d’una carpeta que no existeix en el moment d’invocar el
+mètode. Concretament, es crea una carpeta amb el nom de la ruta (el darrer element
+del text), ubicada a la carpeta pare indicada (tot el text anterior). Si s’ha creat
+correctament, el mètode avalua true. En cas contrari, avalua false. Hi ha diversos
+motius pels quals pot fallar la creació, però normalment es deurà al fet que la ruta és
+incorrecta (algun dels elements no existeixen) o la carpeta ja existia.
+• boolean delete() esborra el fitxer o carpeta que indica la ruta. La ruta ha d’indicar el
+nom d’una carpeta que sí que existeix en el moment d’invocar el mètode. Igual com en
+l’anterior mètode, avalua true o false segons si l’operació realment s’ha pogut dur a
+terme. Els motius pels quals pot fallar són similars a l’anterior, si bé en el cas de les
+carpetes també pot fallar si no està buida. Només es pot esborrar una carpeta usant
+aquest mètode si dins seu no hi té res (ni altres carpetes ni fitxers).
+Per provar l’exemple que es mostra tot seguit de manera que es pugui veure com funcionen
+aquests mètodes, novament, cal una organització prèvia del sistema de fitxers. Primer,
+assegureu-vos que a l’arrel de la unitat “C:” no hi ha cap carpeta anomenada “Temp” i
+executeu el programa. Tot fallarà, ja que les rutes són incorrectes (no existeix “Temp”). Un cop
+fet, creeu la carpeta “Temp”, i a dins seu creeu un nou document anomenat “Document.txt”
+(que pot estar buit si voleu). Ara, en executar el programa, s’haurà creat una nova carpeta
+anomenada “Fotos”. Si sense tocar la carpeta “Temp” executeu el programa per tercer cop,
+ara tot s’haurà esborrat.
+import java.io.File;
+public class FileGestioElements {
+public static void main(String[] args) {
+ FileGestioElements programa = new FileGestioElements();
+ programa.inici();
+ }
+public void inici() {
+ File fotos = new File("C:/Temp/Fotos");
+ File document = new File("C:/Temp/Document.txt");
+ boolean resultat = fotos.mkdir();
+ System.out.println("Creada carpeta " + fotos.getName() + "? " + resultat);
+ if (!resultat) {
+ boolean delCarpeta = fotos.delete();
+ System.out.println("Esborrada carpeta " + fotos.getName() + "? " + delCarpeta);
+ boolean delFitxer = document.delete();
+ System.out.println("Esborrat fitxer " + document.getName() + "? " + delFitxer);
+ }
+ }
+}
+Des del punt de vista d’un sistema operatiu, l’operació de “moure” un fitxer o carpeta no és
+més que canviar el seu nom, des de la seva ruta original fins a una nova ruta destinació. Per fer
+això també hi ha un mètode, ja una mica més complex boolean renameTo(File desti).
+boolean renameTo(Date data = new Date(1306751122651L);
+No s’entrarà en més detall sobre com funciona aquesta classe. Si voleu, podeu mirar els seus
+mètodes a la documentació de l’API de Java.
+L’exemple següent mostra com funcionen aquests mètodes. Per provar-los, abans creeu un
+fitxer anomenat “Document.txt” a la carpeta “C:\Temp”. Inicialment, deixeu-lo buit i executeu
+el programa. Després, amb un editor de text, escriviu qualsevol cosa, deseu els canvis i torneu
+a executar el programa. Observeu com el resultat és diferent. Fixeu-vos també en l’ús de la
+classe Date per poder mostrar correctament la data en un format llegible.
+public class FileLlegirPropietats {
+public static void main(String[] args) {
+ FileLlegirPropietats programa = new FileLlegirPropietats();
+ programa.inici();
+ }
+public void inici() {
+ File document = new File("C:/Temp/Document.txt");
+ System.out.println(document.getAbsoluteFile());
+ // S'usa el tipus composta Date per transformar mil·lisegons a data real
+ Date data = new Date(document.lastModified());
+ System.out.println("Darrera modificació: " + data);
+ System.out.println("Mida: " + document.length());
+ }
+}
+Gestió de fitxers 
+De ben segur, el conjunt d’operacions més habituals quan accediu a un sistema de fitxers en
+treballar en el vostre ordinador són les vinculades a la seva gestió directa: reanomenar fitxers,
+esborrar-los, copiar-los o moure’ls. Donat el nom d’una ruta, Java també permet realitzar
+aquestes accions.
+• boolean mkdir() permet crear una carpeta d’acord a la ubicació que indica la ruta. La
+ruta ha d’indicar el nom d’una carpeta que no existeix en el moment d’invocar el
+mètode. Concretament, es crea una carpeta amb el nom de la ruta (el darrer element
+del text), ubicada a la carpeta pare indicada (tot el text anterior). Si s’ha creat
+correctament, el mètode avalua true. En cas contrari, avalua false. Hi ha diversos
+motius pels quals pot fallar la creació, però normalment es deurà al fet que la ruta és
+incorrecta (algun dels elements no existeixen) o la carpeta ja existia.
+• boolean delete() esborra el fitxer o carpeta que indica la ruta. La ruta ha d’indicar el
+nom d’una carpeta que sí que existeix en el moment d’invocar el mètode. Igual com en
+l’anterior mètode, avalua true o false segons si l’operació realment s’ha pogut dur a
+terme. Els motius pels quals pot fallar són similars a l’anterior, si bé en el cas de les
+carpetes també pot fallar si no està buida. Només es pot esborrar una carpeta usant
+aquest mètode si dins seu no hi té res (ni altres carpetes ni fitxers).
+Per provar l’exemple que es mostra tot seguit de manera que es pugui veure com funcionen
+aquests mètodes, novament, cal una organització prèvia del sistema de fitxers. Primer,
+assegureu-vos que a l’arrel de la unitat “C:” no hi ha cap carpeta anomenada “Temp” i
+executeu el programa. Tot fallarà, ja que les rutes són incorrectes (no existeix “Temp”). Un cop
+fet, creeu la carpeta “Temp”, i a dins seu creeu un nou document anomenat “Document.txt”
+(que pot estar buit si voleu). Ara, en executar el programa, s’haurà creat una nova carpeta
+anomenada “Fotos”. Si sense tocar la carpeta “Temp” executeu el programa per tercer cop,
+ara tot s’haurà esborrat.
+import java.io.File;
+public class FileGestioElements {
+public static void main(String[] args) {
+ FileGestioElements programa = new FileGestioElements();
+ programa.inici();
+ }
+public void inici() {
+ File fotos = new File("C:/Temp/Fotos");
+ File document = new File("C:/Temp/Document.txt");
+ boolean resultat = fotos.mkdir();
+ System.out.println("Creada carpeta " + fotos.getName() + "? " + resultat);
+ if (!resultat) {
+ boolean delCarpeta = fotos.delete();
+ System.out.println("Esborrada carpeta " + fotos.getName() + "? " + delCarpeta);
+ boolean delFitxer = document.delete();
+ System.out.println("Esborrat fitxer " + document.getName() + "? " + delFitxer);
+ }
+ }
+}
+Des del punt de vista d’un sistema operatiu, l’operació de “moure” un fitxer o carpeta no és
+més que canviar el seu nom, des de la seva ruta original fins a una nova ruta destinació. Per fer
+això també hi ha un mètode, ja una mica més complex boolean renameTo(File desti).
+boolean renameTo(Date data = new Date(1306751122651L);
+No s’entrarà en més detall sobre com funciona aquesta classe. Si voleu, podeu mirar els seus
+mètodes a la documentació de l’API de Java.
+L’exemple següent mostra com funcionen aquests mètodes. Per provar-los, abans creeu un
+fitxer anomenat “Document.txt” a la carpeta “C:\Temp”. Inicialment, deixeu-lo buit i executeu
+el programa. Després, amb un editor de text, escriviu qualsevol cosa, deseu els canvis i torneu
+a executar el programa. Observeu com el resultat és diferent. Fixeu-vos també en l’ús de la
+classe Date per poder mostrar correctament la data en un format llegible.
+public class FileLlegirPropietats {
+public static void main(String[] args) {
+ FileLlegirPropietats programa = new FileLlegirPropietats();
+ programa.inici();
+ }
+public void inici() {
+ File document = new File("C:/Temp/Document.txt");
+ System.out.println(document.getAbsoluteFile());
+ // S'usa el tipus composta Date per transformar mil·lisegons a data real
+ Date data = new Date(1306751122651L);
+No s’entrarà en més detall sobre com funciona aquesta classe. Si voleu, podeu mirar els seus
+mètodes a la documentació de l’API de Java.
+L’exemple següent mostra com funcionen aquests mètodes. Per provar-los, abans creeu un
+fitxer anomenat “Document.txt” a la carpeta “C:\Temp”. Inicialment, deixeu-lo buit i executeu
+el programa. Després, amb un editor de text, escriviu qualsevol cosa, deseu els canvis i torneu
+a executar el programa. Observeu com el resultat és diferent. Fixeu-vos també en l’ús de la
+classe Date per poder mostrar correctament la data en un format llegible.
+public class FileLlegirPropietats {
+public static void main(String[] args) {
+ FileLlegirPropietats programa = new FileLlegirPropietatDate data = new Date(1306751122651L);
+No s’entrarà en més detall sobre com funciona aquesta classe. Si voleu, podeu mirar els seus
+mètodes a la documentació de l’API de Java.
+L’exemple següent mostra com funcionen aquests mètodes. Per provar-los, abans creeu un
+fitxer anomenat “Document.txt” a la carpeta “C:\Temp”. Inicialment, deixeu-lo buit i executeu
+el programa. Després, amb un editor de text, escriviu qualsevol cosa, deseu els canvis i torneu
+a executar el programa. Observeu com el resultat és diferent. Fixeu-vos també en l’ús de la
+classe Date per poder mostrar correctament la data en un format llegible.
+public class FileLlegirPropietats {
+public static void main(String[] args) {
+ FileLlegirPropietats programa = new FileLlegirPropietats();
+ programa.inici();
+ }
+public void inici() {
+ File document = new File("C:/Temp/Document.txt");
+ System.out.println(document.getAbsoluteFile());
+ // S'usa el tipus composta Date per transformar mil·lisegons a data real
+ Date data = new Date(document.lastModified());
+ System.out.println("Darrera modificació: " + data);
+ System.out.println("Mida: " + document.length());
+ }
+}
+Gestió de fitxers 
+De ben segur, el conjunt d’operacions més habituals quan accediu a un sistema de fitxers en
+treballar en el vostre ordinador són les vinculades a la seva gestió directa: reanomenar fitxers,
+esborrar-los, copiar-los o moure’ls. Donat el nom d’una ruta, Java també permet realitzar
+aquestes accions.
+• boolean mkdir() permet crear una carpeta d’acord a la ubicació que indica la ruta. La
+ruta ha d’indicar el nom d’una carpeta que no existeix en el moment d’invocar el
+mètode. Concretament, es crea una carpeta amb el nom de la ruta (el darrer element
+del text), ubicada a la carpeta pare indicada (tot el text anterior). Si s’ha creat
+correctament, el mètode avalua true. En cas contrari, avalua false. Hi ha diversos
+motius pels quals pot fallar la creació, però normalment es deurà al fet que la ruta és
+incorrecta (algun dels elements no existeixen) o la carpeta ja existia.
+• boolean delete() esborra el fitxer o carpeta que indica la ruta. La ruta ha d’indicar el
+nom d’una carpeta que sí que existeix en el moment d’invocar el mètode. Igual com en
+l’anterior mètode, avalua true o false segons si l’operació realment s’ha pogut dur a
+terme. Els motius pels quals pot fallar són similars a l’anterior, si bé en el cas de les
+carpetes també pot fallar si no està buida. Només es pot esborrar una carpeta usant
+aquest mètode si dins seu no hi té res (ni altres carpetes ni fitxers).
+Per provar l’exemple que es mostra tot seguit de manera que es pugui veure com funcionen
+aquests mètodes, novament, cal una organització prèvia del sistema de fitxers. Primer,
+assegureu-vos que a l’arrel de la unitat “C:” no hi ha cap carpeta anomenada “Temp” i
+executeu el programa. Tot fallarà, ja que les rutes són incorrectes (no existeix “Temp”). Un cop
+fet, creeu la carpeta “Temp”, i a dins seu creeu un nou document anomenat “Document.txt”
+(que pot estar buit si voleu). Ara, en executar el programa, s’haurà creat una nova carpeta
+anomenada “Fotos”. Si sense tocar la carpeta “Temp” executeu el programa per tercer cop,
+ara tot s’haurà esborrat.
+import java.io.File;
+public class FileGestioElements {
+public static void main(String[] args) {
+ FileGestioElements programa = new FileGestioElements();
+ programa.inici();
+ }
+public void inici() {
+ File fotos = new File("C:/Temp/Fotos");
+ File document = new File("C:/Temp/Document.txt");
+ boolean resultat = fotos.mkdir();
+ System.out.println("Creada carpeta " + fotos.getName() + "? " + resultat);
+ if (!resultat) {
+ boolean delCarpeta = fotos.delete();
+ System.out.println("Esborrada carpeta " + fotos.getName() + "? " + delCarpeta);
+ boolean delFitxer = document.delete();
+ System.out.println("Esborrat fitxer " + document.getName() + "? " + delFitxer);
+ }
+ }
+}
+Des del punt de vista d’un sistema operatiu, l’operació de “moure” un fitxer o carpeta no és
+més que canviar el seu nom, des de la seva ruta original fins a una nova ruta destinació. Per fer
+això també hi ha un mètode, ja una mica més complex boolean renameTo(File desti).
+boolean renameTo(Date data = new Date(1306751122651L);
+No s’entrarà en més detall sobre com funciona aquesta classe. Si voleu, podeu mirar els seus
+mètodes a la documentació de l’API de Java.
+L’exemple següent mostra com funcionen aquests mètodes. Per provar-los, abans creeu un
+fitxer anomenat “Document.txt” a la carpeta “C:\Temp”. Inicialment, deixeu-lo buit i executeu
+el programa. Després, amb un editor de text, escriviu qualsevol cosa, deseu els canvis i torneu
+a executar el programa. Observeu com el resultat és diferent. Fixeu-vos també en l’ús de la
+classe Date per poder mostrar correctament la data en un format llegible.
+public class FileLlegirPropietats {
+public static void main(String[] args) {
+ FileLlegirPropietats programa = new FileLlegirPropietats();
+ programa.inici();
+ }
+public void inici() {
+ File document = new File("C:/Temp/Document.txt");
+ System.out.println(document.getAbsoluteFile());
+ // S'usa el tipus composta Date per transformar mil·lisegons a data real
+ Date data = new Date(document.lastModified());
+ System.out.println("Darrera modificació: " + data);
+ System.out.println("Mida: " + document.length());
+ }
+}
+Gestió de fitxers 
+De ben segur, el conjunt d’operacions més habituals quan accediu a un sistema de fitxers en
+treballar en el vostre ordinador són les vinculades a la seva gestió directa: reanomenar fitxers,
+esborrar-los, copiar-los o moure’ls. Donat el nom d’una ruta, Java també permet realitzar
+aquestes accions.
+• boolean mkdir() permet crear una carpeta d’acord a la ubicació que indica la ruta. La
+ruta ha d’indicar el nom d’una carpeta que no existeix en el moment d’invocar el
+mètode. Concretament, es crea una carpeta amb el nom de la ruta (el darrer element
+del text), ubicada a la carpeta pare indicada (tot el text anterior). Si s’ha creat
+correctament, el mètode avalua true. En cas contrari, avalua false. Hi ha diversos
+motius pels quals pot fallar la creació, però normalment es deurà al fet que la ruta és
+incorrecta (algun dels elements no existeixen) o la carpeta ja existia.
+• boolean delete() esborra el fitxer o carpeta que indica la ruta. La ruta ha d’indicar el
+nom d’una carpeta que sí que existeix en el moment d’invocar el mètode. Igual com en
+l’anterior mètode, avalua true o false segons si l’operació realment s’ha pogut dur a
+terme. Els motius pels quals pot fallar són similars a l’anterior, si bé en el cas de les
+carpetes també pot fallar si no està buida. Només es pot esborrar una carpeta usant
+aquest mètode si dins seu no hi té res (ni altres carpetes ni fitxers).
+Per provar l’exemple que es mostra tot seguit de manera que es pugui veure com funcionen
+aquests mètodes, novament, cal una organització prèvia del sistema de fitxers. Primer,
+assegureu-vos que a l’arrel de la unitat “C:” no hi ha cap carpeta anomenada “Temp” i
+executeu el programa. Tot fallarà, ja que les rutes són incorrectes (no existeix “Temp”). Un cop
+fet, creeu la carpeta “Temp”, i a dins seu creeu un nou document anomenat “Document.txt”
+(que pot estar buit si voleu). Ara, en executar el programa, s’haurà creat una nova carpeta
+anomenada “Fotos”. Si sense tocar la carpeta “Temp” executeu el programa per tercer cop,
+ara tot s’haurà esborrat.
+import java.io.File;
+public class FileGestioElements {
+public static void main(String[] args) {
+ FileGestioElements programa = new FileGestioElements();
+ programa.inici();
+ }
+public void inici() {
+ File fotos = new File("C:/Temp/Fotos");
+ File document = new File("C:/Temp/Document.txt");
+ boolean resultat = fotos.mkdir();
+ System.out.println("Creada carpeta " + fotos.getName() + "? " + resultat);
+ if (!resultat) {
+ boolean delCarpeta = fotos.delete();
+ System.out.println("Esborrada carpeta " + fotos.getName() + "? " + delCarpeta);
+ boolean delFitxer = document.delete();
+ System.out.println("Esborrat fitxer " + document.getName() + "? " + delFitxer);
+ }
+ }
+}
+Des del punt de vista d’un sistema operatiu, l’operació de “moure” un fitxer o carpeta no és
+més que canviar el seu nom, des de la seva ruta original fins a una nova ruta destinació. Per fer
+això també hi ha un mètode, ja una mica més complex boolean renameTo(File desti).
+boolean renameTo(Date data = new Date(1306751122651L);
+No s’entrarà en més detall sobre com funciona aquesta classe. Si voleu, podeu mirar els seus
+mètodes a la documentació de l’API de Java.
+L’exemple següent mostra com funcionen aquests mètodes. Per provar-los, abans creeu un
+fitxer anomenat “Document.txt” a la carpeta “C:\Temp”. Inicialment, deixeu-lo buit i executeu
+el programa. Després, amb un editor de text, escriviu qualsevol cosa, deseu els canvis i torneu
+a executar el programa. Observeu com el resultat és diferent. Fixeu-vos també en l’ús de la
+classe Date per poder mostrar correctament la data en un format llegible.
+public class FileLlegirPropietats {
+public static void main(String[] args) {
+ FileLlegirPropietats programa = new FileLlegirPropietats();
+ programa.inici();
+ }
+public void inici() {
+ File document = new File("C:/Temp/Document.txt");
+ System.out.println(document.getAbsoluteFile());
+ // S'usa el tipus composta Date per transformar mil·lisegons a data real
+ Date data = new Date(1306751122651L);
+No s’entrarà en més detall sobre com funciona aquesta classe. Si voleu, podeu mirar els seus
+mètodes a la documentació de l’API de Java.
+L’exemple següent mostra com funcionen aquests mètodes. Per provar-los, abans creeu un
+fitxer anomenat “Document.txt” a la carpeta “C:\Temp”. Inicialment, deixeu-lo buit i executeu
+el programa. Després, amb un editor de text, escriviu qualsevol cosa, deseu els canvis i torneu
+a executar el programa. Observeu com el resultat és diferent. Fixeu-vos també en l’ús de la
+classe Date per poder mostrar correctament la data en un format llegible.
+public class FileLlegirPropietats {
+public static void main(String[] args) {
+ FileLlegirPropietats programa = new FileLlegirPropietatDate data = new Date(1306751122651L);
+No s’entrarà en més detall sobre com funciona aquesta classe. Si voleu, podeu mirar els seus
+mètodes a la documentació de l’API de Java.
+L’exemple següent mostra com funcionen aquests mètodes. Per provar-los, abans creeu un
+fitxer anomenat “Document.txt” a la carpeta “C:\Temp”. Inicialment, deixeu-lo buit i executeu
+el programa. Després, amb un editor de text, escriviu qualsevol cosa, deseu els canvis i torneu
+a executar el programa. Observeu com el resultat és diferent. Fixeu-vos també en l’ús de la
+classe Date per poder mostrar correctament la data en un format llegible.
+public class FileLlegirPropietats {
+public static void main(String[] args) {
+ FileLlegirPropietats programa = new FileLlegirPropietats();
+ programa.inici();
+ }
+public void inici() {
+ File document = new File("C:/Temp/Document.txt");
+ System.out.println(document.getAbsoluteFile());
+ // S'usa el tipus composta Date per transformar mil·lisegons a data real
+ Date data = new Date(document.lastModified());
+ System.out.println("Darrera modificació: " + data);
+ System.out.println("Mida: " + document.length());
+ }
+}
+Gestió de fitxers 
+De ben segur, el conjunt d’operacions més habituals quan accediu a un sistema de fitxers en
+treballar en el vostre ordinador són les vinculades a la seva gestió directa: reanomenar fitxers,
+esborrar-los, copiar-los o moure’ls. Donat el nom d’una ruta, Java també permet realitzar
+aquestes accions.
+• boolean mkdir() permet crear una carpeta d’acord a la ubicació que indica la ruta. La
+ruta ha d’indicar el nom d’una carpeta que no existeix en el moment d’invocar el
+mètode. Concretament, es crea una carpeta amb el nom de la ruta (el darrer element
+del text), ubicada a la carpeta pare indicada (tot el text anterior). Si s’ha creat
+correctament, el mètode avalua true. En cas contrari, avalua false. Hi ha diversos
+motius pels quals pot fallar la creació, però normalment es deurà al fet que la ruta és
+incorrecta (algun dels elements no existeixen) o la carpeta ja existia.
+• boolean delete() esborra el fitxer o carpeta que indica la ruta. La ruta ha d’indicar el
+nom d’una carpeta que sí que existeix en el moment d’invocar el mètode. Igual com en
+l’anterior mètode, avalua true o false segons si l’operació realment s’ha pogut dur a
+terme. Els motius pels quals pot fallar són similars a l’anterior, si bé en el cas de les
+carpetes també pot fallar si no està buida. Només es pot esborrar una carpeta usant
+aquest mètode si dins seu no hi té res (ni altres carpetes ni fitxers).
+Per provar l’exemple que es mostra tot seguit de manera que es pugui veure com funcionen
+aquests mètodes, novament, cal una organització prèvia del sistema de fitxers. Primer,
+assegureu-vos que a l’arrel de la unitat “C:” no hi ha cap carpeta anomenada “Temp” i
+executeu el programa. Tot fallarà, ja que les rutes són incorrectes (no existeix “Temp”). Un cop
+fet, creeu la carpeta “Temp”, i a dins seu creeu un nou document anomenat “Document.txt”
+(que pot estar buit si voleu). Ara, en executar el programa, s’haurà creat una nova carpeta
+anomenada “Fotos”. Si sense tocar la carpeta “Temp” executeu el programa per tercer cop,
+ara tot s’haurà esborrat.
+import java.io.File;
+public class FileGestioElements {
+public static void main(String[] args) {
+ FileGestioElements programa = new FileGestioElements();
+ programa.inici();
+ }
+public void inici() {
+ File fotos = new File("C:/Temp/Fotos");
+ File document = new File("C:/Temp/Document.txt");
+ boolean resultat = fotos.mkdir();
+ System.out.println("Creada carpeta " + fotos.getName() + "? " + resultat);
+ if (!resultat) {
+ boolean delCarpeta = fotos.delete();
+ System.out.println("Esborrada carpeta " + fotos.getName() + "? " + delCarpeta);
+ boolean delFitxer = document.delete();
+ System.out.println("Esborrat fitxer " + document.getName() + "? " + delFitxer);
+ }
+ }
+}
+Des del punt de vista d’un sistema operatiu, l’operació de “moure” un fitxer o carpeta no és
+més que canviar el seu nom, des de la seva ruta original fins a una nova ruta destinació. Per fer
+això també hi ha un mètode, ja una mica més complex boolean renameTo(File desti).
+boolean renameTo(Date data = new Date(1306751122651L);
+No s’entrarà en més detall sobre com funciona aquesta classe. Si voleu, podeu mirar els seus
+mètodes a la documentació de l’API de Java.
+L’exemple següent mostra com funcionen aquests mètodes. Per provar-los, abans creeu un
+fitxer anomenat “Document.txt” a la carpeta “C:\Temp”. Inicialment, deixeu-lo buit i executeu
+el programa. Després, amb un editor de text, escriviu qualsevol cosa, deseu els canvis i torneu
+a executar el programa. Observeu com el resultat és diferent. Fixeu-vos també en l’ús de la
+classe Date per poder mostrar correctament la data en un format llegible.
+public class FileLlegirPropietats {
+public static void main(String[] args) {
+ FileLlegirPropietats programa = new FileLlegirPropietats();
+ programa.inici();
+ }
+public void inici() {
+ File document = new File("C:/Temp/Document.txt");
+ System.out.println(document.getAbsoluteFile());
+ // S'usa el tipus composta Date per transformar mil·lisegons a data real
+ Date data = new Date(document.lastModified());
+ System.out.println("Darrera modificació: " + data);
+ System.out.println("Mida: " + document.length());
+ }
+}
+Gestió de fitxers 
+De ben segur, el conjunt d’operacions més habituals quan accediu a un sistema de fitxers en
+treballar en el vostre ordinador són les vinculades a la seva gestió directa: reanomenar fitxers,
+esborrar-los, copiar-los o moure’ls. Donat el nom d’una ruta, Java també permet realitzar
+aquestes accions.
+• boolean mkdir() permet crear una carpeta d’acord a la ubicació que indica la ruta. La
+ruta ha d’indicar el nom d’una carpeta que no existeix en el moment d’invocar el
+mètode. Concretament, es crea una carpeta amb el nom de la ruta (el darrer element
+del text), ubicada a la carpeta pare indicada (tot el text anterior). Si s’ha creat
+correctament, el mètode avalua true. En cas contrari, avalua false. Hi ha diversos
+motius pels quals pot fallar la creació, però normalment es deurà al fet que la ruta és
+incorrecta (algun dels elements no existeixen) o la carpeta ja existia.
+• boolean delete() esborra el fitxer o carpeta que indica la ruta. La ruta ha d’indicar el
+nom d’una carpeta que sí que existeix en el moment d’invocar el mètode. Igual com en
+l’anterior mètode, avalua true o false segons si l’operació realment s’ha pogut dur a
+terme. Els motius pels quals pot fallar són similars a l’anterior, si bé en el cas de les
+carpetes també pot fallar si no està buida. Només es pot esborrar una carpeta usant
+aquest mètode si dins seu no hi té res (ni altres carpetes ni fitxers).
+Per provar l’exemple que es mostra tot seguit de manera que es pugui veure com funcionen
+aquests mètodes, novament, cal una organització prèvia del sistema de fitxers. Primer,
+assegureu-vos que a l’arrel de la unitat “C:” no hi ha cap carpeta anomenada “Temp” i
+executeu el programa. Tot fallarà, ja que les rutes són incorrectes (no existeix “Temp”). Un cop
+fet, creeu la carpeta “Temp”, i a dins seu creeu un nou document anomenat “Document.txt”
+(que pot estar buit si voleu). Ara, en executar el programa, s’haurà creat una nova carpeta
+anomenada “Fotos”. Si sense tocar la carpeta “Temp” executeu el programa per tercer cop,
+ara tot s’haurà esborrat.
+import java.io.File;
+public class FileGestioElements {
+public static void main(String[] args) {
+ FileGestioElements programa = new FileGestioElements();
+ programa.inici();
+ }
+public void inici() {
+ File fotos = new File("C:/Temp/Fotos");
+ File document = new File("C:/Temp/Document.txt");
+ boolean resultat = fotos.mkdir();
+ System.out.println("Creada carpeta " + fotos.getName() + "? " + resultat);
+ if (!resultat) {
+ boolean delCarpeta = fotos.delete();
+ System.out.println("Esborrada carpeta " + fotos.getName() + "? " + delCarpeta);
+ boolean delFitxer = document.delete();
+ System.out.println("Esborrat fitxer " + document.getName() + "? " + delFitxer);
+ }
+ }
+}
+Des del punt de vista d’un sistema operatiu, l’operació de “moure” un fitxer o carpeta no és
+més que canviar el seu nom, des de la seva ruta original fins a una nova ruta destinació. Per fer
+això també hi ha un mètode, ja una mica més complex boolean renameTo(File desti).
+boolean renameTo(Date data = new Date(1306751122651L);
+No s’entrarà en més detall sobre com funciona aquesta classe. Si voleu, podeu mirar els seus
+mètodes a la documentació de l’API de Java.
+L’exemple següent mostra com funcionen aquests mètodes. Per provar-los, abans creeu un
+fitxer anomenat “Document.txt” a la carpeta “C:\Temp”. Inicialment, deixeu-lo buit i executeu
+el programa. Després, amb un editor de text, escriviu qualsevol cosa, deseu els canvis i torneu
+a executar el programa. Observeu com el resultat és diferent. Fixeu-vos també en l’ús de la
+classe Date per poder mostrar correctament la data en un format llegible.
+public class FileLlegirPropietats {
+public static void main(String[] args) {
+ FileLlegirPropietats programa = new FileLlegirPropietats();
+ programa.inici();
+ }
+public void inici() {
+ File document = new File("C:/Temp/Document.txt");
+ System.out.println(document.getAbsoluteFile());
+ // S'usa el tipus composta Date per transformar mil·lisegons a data real
+ Date data = new Date(1306751122651L);
+No s’entrarà en més detall sobre com funciona aquesta classe. Si voleu, podeu mirar els seus
+mètodes a la documentació de l’API de Java.
+L’exemple següent mostra com funcionen aquests mètodes. Per provar-los, abans creeu un
+fitxer anomenat “Document.txt” a la carpeta “C:\Temp”. Inicialment, deixeu-lo buit i executeu
+el programa. Després, amb un editor de text, escriviu qualsevol cosa, deseu els canvis i torneu
+a executar el programa. Observeu com el resultat és diferent. Fixeu-vos també en l’ús de la
+classe Date per poder mostrar correctament la data en un format llegible.
+public class FileLlegirPropietats {
+public static void main(String[] args) {
+ FileLlegirPropietats programa = new FileLlegirPropietatDate data = new Date(1306751122651L);
+No s’entrarà en més detall sobre com funciona aquesta classe. Si voleu, podeu mirar els seus
+mètodes a la documentació de l’API de Java.
+L’exemple següent mostra com funcionen aquests mètodes. Per provar-los, abans creeu un
+fitxer anomenat “Document.txt” a la carpeta “C:\Temp”. Inicialment, deixeu-lo buit i executeu
+el programa. Després, amb un editor de text, escriviu qualsevol cosa, deseu els canvis i torneu
+a executar el programa. Observeu com el resultat és diferent. Fixeu-vos també en l’ús de la
+classe Date per poder mostrar correctament la data en un format llegible.
+public class FileLlegirPropietats {
+public static void main(String[] args) {
+ FileLlegirPropietats programa = new FileLlegirPropietats();
+ programa.inici();
+ }
+public void inici() {
+ File document = new File("C:/Temp/Document.txt");
+ System.out.println(document.getAbsoluteFile());
+ // S'usa el tipus composta Date per transformar mil·lisegons a data real
+ Date data = new Date(document.lastModified());
+ System.out.println("Darrera modificació: " + data);
+ System.out.println("Mida: " + document.length());
+ }
+}
+Gestió de fitxers 
+De ben segur, el conjunt d’operacions més habituals quan accediu a un sistema de fitxers en
+treballar en el vostre ordinador són les vinculades a la seva gestió directa: reanomenar fitxers,
+esborrar-los, copiar-los o moure’ls. Donat el nom d’una ruta, Java també permet realitzar
+aquestes accions.
+• boolean mkdir() permet crear una carpeta d’acord a la ubicació que indica la ruta. La
+ruta ha d’indicar el nom d’una carpeta que no existeix en el moment d’invocar el
+mètode. Concretament, es crea una carpeta amb el nom de la ruta (el darrer element
+del text), ubicada a la carpeta pare indicada (tot el text anterior). Si s’ha creat
+correctament, el mètode avalua true. En cas contrari, avalua false. Hi ha diversos
+motius pels quals pot fallar la creació, però normalment es deurà al fet que la ruta és
+incorrecta (algun dels elements no existeixen) o la carpeta ja existia.
+• boolean delete() esborra el fitxer o carpeta que indica la ruta. La ruta ha d’indicar el
+nom d’una carpeta que sí que existeix en el moment d’invocar el mètode. Igual com en
+l’anterior mètode, avalua true o false segons si l’operació realment s’ha pogut dur a
+terme. Els motius pels quals pot fallar són similars a l’anterior, si bé en el cas de les
+carpetes també pot fallar si no està buida. Només es pot esborrar una carpeta usant
+aquest mètode si dins seu no hi té res (ni altres carpetes ni fitxers).
+Per provar l’exemple que es mostra tot seguit de manera que es pugui veure com funcionen
+aquests mètodes, novament, cal una organització prèvia del sistema de fitxers. Primer,
+assegureu-vos que a l’arrel de la unitat “C:” no hi ha cap carpeta anomenada “Temp” i
+executeu el programa. Tot fallarà, ja que les rutes són incorrectes (no existeix “Temp”). Un cop
+fet, creeu la carpeta “Temp”, i a dins seu creeu un nou document anomenat “Document.txt”
+(que pot estar buit si voleu). Ara, en executar el programa, s’haurà creat una nova carpeta
+anomenada “Fotos”. Si sense tocar la carpeta “Temp” executeu el programa per tercer cop,
+ara tot s’haurà esborrat.
+import java.io.File;
+public class FileGestioElements {
+public static void main(String[] args) {
+ FileGestioElements programa = new FileGestioElements();
+ programa.inici();
+ }
+public void inici() {
+ File fotos = new File("C:/Temp/Fotos");
+ File document = new File("C:/Temp/Document.txt");
+ boolean resultat = fotos.mkdir();
+ System.out.println("Creada carpeta " + fotos.getName() + "? " + resultat);
+ if (!resultat) {
+ boolean delCarpeta = fotos.delete();
+ System.out.println("Esborrada carpeta " + fotos.getName() + "? " + delCarpeta);
+ boolean delFitxer = document.delete();
+ System.out.println("Esborrat fitxer " + document.getName() + "? " + delFitxer);
+ }
+ }
+}
+Des del punt de vista d’un sistema operatiu, l’operació de “moure” un fitxer o carpeta no és
+més que canviar el seu nom, des de la seva ruta original fins a una nova ruta destinació. Per fer
+això també hi ha un mètode, ja una mica més complex boolean renameTo(File desti).
+boolean renameTo(Date data = new Date(1306751122651L);
+No s’entrarà en més detall sobre com funciona aquesta classe. Si voleu, podeu mirar els seus
+mètodes a la documentació de l’API de Java.
+L’exemple següent mostra com funcionen aquests mètodes. Per provar-los, abans creeu un
+fitxer anomenat “Document.txt” a la carpeta “C:\Temp”. Inicialment, deixeu-lo buit i executeu
+el programa. Després, amb un editor de text, escriviu qualsevol cosa, deseu els canvis i torneu
+a executar el programa. Observeu com el resultat és diferent. Fixeu-vos també en l’ús de la
+classe Date per poder mostrar correctament la data en un format llegible.
+public class FileLlegirPropietats {
+public static void main(String[] args) {
+ FileLlegirPropietats programa = new FileLlegirPropietats();
+ programa.inici();
+ }
+public void inici() {
+ File document = new File("C:/Temp/Document.txt");
+ System.out.println(document.getAbsoluteFile());
+ // S'usa el tipus composta Date per transformar mil·lisegons a data real
+ Date data = new Date(document.lastModified());
+ System.out.println("Darrera modificació: " + data);
+ System.out.println("Mida: " + document.length());
+ }
+}
+Gestió de fitxers 
+De ben segur, el conjunt d’operacions més habituals quan accediu a un sistema de fitxers en
+treballar en el vostre ordinador són les vinculades a la seva gestió directa: reanomenar fitxers,
+esborrar-los, copiar-los o moure’ls. Donat el nom d’una ruta, Java també permet realitzar
+aquestes accions.
+• boolean mkdir() permet crear una carpeta d’acord a la ubicació que indica la ruta. La
+ruta ha d’indicar el nom d’una carpeta que no existeix en el moment d’invocar el
+mètode. Concretament, es crea una carpeta amb el nom de la ruta (el darrer element
+del text), ubicada a la carpeta pare indicada (tot el text anterior). Si s’ha creat
+correctament, el mètode avalua true. En cas contrari, avalua false. Hi ha diversos
+motius pels quals pot fallar la creació, però normalment es deurà al fet que la ruta és
+incorrecta (algun dels elements no existeixen) o la carpeta ja existia.
+• boolean delete() esborra el fitxer o carpeta que indica la ruta. La ruta ha d’indicar el
+nom d’una carpeta que sí que existeix en el moment d’invocar el mètode. Igual com en
+l’anterior mètode, avalua true o false segons si l’operació realment s’ha pogut dur a
+terme. Els motius pels quals pot fallar són similars a l’anterior, si bé en el cas de les
+carpetes també pot fallar si no està buida. Només es pot esborrar una carpeta usant
+aquest mètode si dins seu no hi té res (ni altres carpetes ni fitxers).
+Per provar l’exemple que es mostra tot seguit de manera que es pugui veure com funcionen
+aquests mètodes, novament, cal una organització prèvia del sistema de fitxers. Primer,
+assegureu-vos que a l’arrel de la unitat “C:” no hi ha cap carpeta anomenada “Temp” i
+executeu el programa. Tot fallarà, ja que les rutes són incorrectes (no existeix “Temp”). Un cop
+fet, creeu la carpeta “Temp”, i a dins seu creeu un nou document anomenat “Document.txt”
+(que pot estar buit si voleu). Ara, en executar el programa, s’haurà creat una nova carpeta
+anomenada “Fotos”. Si sense tocar la carpeta “Temp” executeu el programa per tercer cop,
+ara tot s’haurà esborrat.
+import java.io.File;
+public class FileGestioElements {
+public static void main(String[] args) {
+ FileGestioElements programa = new FileGestioElements();
+ programa.inici();
+ }
+public void inici() {
+ File fotos = new File("C:/Temp/Fotos");
+ File document = new File("C:/Temp/Document.txt");
+ boolean resultat = fotos.mkdir();
+ System.out.println("Creada carpeta " + fotos.getName() + "? " + resultat);
+ if (!resultat) {
+ boolean delCarpeta = fotos.delete();
+ System.out.println("Esborrada carpeta " + fotos.getName() + "? " + delCarpeta);
+ boolean delFitxer = document.delete();
+ System.out.println("Esborrat fitxer " + document.getName() + "? " + delFitxer);
+ }
+ }
+}
+Des del punt de vista d’un sistema operatiu, l’operació de “moure” un fitxer o carpeta no és
+més que canviar el seu nom, des de la seva ruta original fins a una nova ruta destinació. Per fer
+això també hi ha un mètode, ja una mica més complex boolean renameTo(File desti).
+boolean renameTo(Date data = new Date(1306751122651L);
+No s’entrarà en més detall sobre com funciona aquesta classe. Si voleu, podeu mirar els seus
+mètodes a la documentació de l’API de Java.
+L’exemple següent mostra com funcionen aquests mètodes. Per provar-los, abans creeu un
+fitxer anomenat “Document.txt” a la carpeta “C:\Temp”. Inicialment, deixeu-lo buit i executeu
+el programa. Després, amb un editor de text, escriviu qualsevol cosa, deseu els canvis i torneu
+a executar el programa. Observeu com el resultat és diferent. Fixeu-vos també en l’ús de la
+classe Date per poder mostrar correctament la data en un format llegible.
+public class FileLlegirPropietats {
+public static void main(String[] args) {
+ FileLlegirPropietats programa = new FileLlegirPropietats();
+ programa.inici();
+ }
+public void inici() {
+ File document = new File("C:/Temp/Document.txt");
+ System.out.println(document.getAbsoluteFile());
+ // S'usa el tipus composta Date per transformar mil·lisegons a data real
+ D

@@ -1,0 +1,5 @@
+client.setAccessKey("AKIAIELXKQCMUDAJFKAA");
+client.setSecretKey("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");
+String partnerTag = "starwarses-21";
+client.setHost("webservices.amazon.es");
+client.setRegion("eu-west-1");

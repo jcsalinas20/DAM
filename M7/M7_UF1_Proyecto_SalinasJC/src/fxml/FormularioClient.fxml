@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="600.0" maxWidth="864.0" minHeight="600.0" minWidth="720.0" onMouseMoved="#habilitarDeshabilitarComponentes" prefHeight="600.0" prefWidth="864.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.FormularioCliente">
+   <children>
+      <TextField fx:id="tfNombre" alignment="CENTER" layoutX="95.0" layoutY="123.0" onMouseClicked="#textFieldPress" promptText="nombre">
+         <font>
+            <Font name="Comic Sans MS" size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="tfApellidos" alignment="CENTER" layoutX="414.0" layoutY="123.0" onMouseClicked="#textFieldPress" promptText="apellidos">
+         <font>
+            <Font name="Comic Sans MS" size="15.0" />
+         </font>
+      </TextField>
+      <RadioButton fx:id="btnSexoH" layoutX="244.0" layoutY="276.0" mnemonicParsing="false" text="Hombre">
+         <toggleGroup>
+            <ToggleGroup fx:id="sexo" />
+         </toggleGroup>
+         <font>
+            <Font name="Comic Sans MS" size="15.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="btnSexoM" layoutX="396.0" layoutY="276.0" mnemonicParsing="false" selected="true" text="Mujer" toggleGroup="$sexo">
+         <font>
+            <Font name="Comic Sans MS" size="15.0" />
+         </font>
+      </RadioButton>
+      <Label layoutX="327.0" layoutY="242.0" text="Sexo">
+         <font>
+            <Font name="Comic Sans MS" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="275.0" layoutY="60.0" text="Añadir Cliente">
+         <font>
+            <Font name="Comic Sans MS" size="24.0" />
+         </font>
+      </Label>
+      <MenuBar fx:id="menuBar" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Añadir">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Cliente" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Ver">
+               <items>
+              <MenuItem mnemonicParsing="false" onAction="#menuOptionSubscripciones" text="Subscripciones" />
+                  <MenuItem mnemonicParsing="false" onAction="#mostrarInformeCliente" text="Informe Clientes" />
+                  <MenuItem mnemonicParsing="false" onAction="#mostrarInformeProductos" text="Informe Productos" />
+               </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Opciones">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#menuOptionExit" text="Exit" />
+               </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <TextField fx:id="tfCorreo" alignment="CENTER" layoutX="95.0" layoutY="194.0" onMouseClicked="#textFieldPress" promptText="correo">
+         <font>
+            <Font name="Comic Sans MS" size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="tfDireccion" alignment="CENTER" layoutX="95.0" layoutY="349.0" onMouseClicked="#textFieldPress" promptText="direccion envio">
+         <font>
+            <Font name="Comic Sans MS" size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="tfCP" alignment="CENTER" layoutX="414.0" layoutY="343.0" onMouseClicked="#textFieldPress" promptText="codigo postal">
+         <font>
+            <Font name="Comic Sans MS" size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="tfProvincia" alignment="CENTER" layoutX="95.0" layoutY="415.0" onMouseClicked="#textFieldPress" promptText="provincia">
+         <font>
+            <Font name="Comic Sans MS" size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="tfLocalidad" alignment="CENTER" layoutX="414.0" layoutY="415.0" onMouseClicked="#textFieldPress" promptText="localidad">
+         <font>
+            <Font name="Comic Sans MS" size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="tfTelefono" alignment="CENTER" layoutX="414.0" layoutY="194.0" onMouseClicked="#textFieldPress" promptText="telefono">
+         <font>
+            <Font name="Comic Sans MS" size="15.0" />
+         </font>
+      </TextField>
+      <CheckBox fx:id="cbRecibirCaja" layoutX="263.0" layoutY="480.0" mnemonicParsing="false" selected="true" text="Recibir caja este mes">
+         <font>
+            <Font name="Comic Sans MS" size="15.0" />
+         </font>
+      </CheckBox>
+      <Button fx:id="btnTerminar" alignment="CENTER" layoutX="309.0" layoutY="531.0" mnemonicParsing="false" onAction="#agregarCliente" text="Terminar">
+         <font>
+            <Font name="Comic Sans MS" size="15.0" />
+         </font>
+      </Button>
+      <Accordion layoutX="690.0" layoutY="217.0" />
+      <Button fx:id="btnAgregarHijo" layoutX="700.0" layoutY="44.0" mnemonicParsing="false" onAction="#agregarHijo" text="Agregar Hij@">
+         <font>
+            <Font name="Comic Sans MS" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnEditarHijo" layoutX="707.0" layoutY="547.0" mnemonicParsing="false" onAction="#editarHijo" text="Editar Hij@">
+         <font>
+            <Font name="Comic Sans MS" size="15.0" />
+         </font>
+      </Button>
+      <ListView fx:id="listaHijos" layoutX="678.0" layoutY="92.0" onContextMenuRequested="#contextMenuOptions" onMouseClicked="#seleccionHijo" prefHeight="438.0" prefWidth="160.0" />
+   </children>
+</AnchorPane>

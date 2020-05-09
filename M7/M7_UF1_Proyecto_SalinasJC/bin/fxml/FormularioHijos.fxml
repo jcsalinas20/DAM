@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane onMouseClicked="#windowsListener" onMouseMoved="#windowsListener" prefHeight="506.0" prefWidth="567.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.FormularioHijos">
+	<children>
+		<Button fx:id="btnAgregar" layoutX="187.0" layoutY="417.0" mnemonicParsing="false" onAction="#agregarHijo" text="Agregar">
+			<font>
+				<Font name="Comic Sans MS" size="15.0" />
+			</font>
+		</Button>
+		<TextField fx:id="tfNombre" alignment="CENTER" layoutX="66.0" layoutY="167.0" onMouseClicked="#camposPresionados" promptText="nombre">
+			<font>
+				<Font name="Comic Sans MS" size="15.0" />
+			</font>
+		</TextField>
+		<Label layoutX="207.0" layoutY="28.0" text="Agregar Hij@">
+			<font>
+				<Font name="Comic Sans MS" size="24.0" />
+			</font>
+		</Label>
+		<TextField fx:id="tfApellidos" alignment="CENTER" layoutX="299.0" layoutY="167.0" onMouseClicked="#camposPresionados" promptText="apellidos">
+			<font>
+				<Font name="Comic Sans MS" size="15.0" />
+			</font>
+		</TextField>
+		<DatePicker fx:id="fechaNacimiento" layoutX="197.0" layoutY="228.0" onMouseClicked="#camposPresionados" promptText="fecha nacimiento" />
+		<ComboBox fx:id="cbTallas" layoutX="94.0" layoutY="338.0" prefWidth="150.0" promptText="Talla" />
+		<ComboBox fx:id="cbPies" layoutX="327.0" layoutY="338.0" prefWidth="150.0" promptText="Pies" />
+		<Label fx:id="lblNombrePadre" alignment="CENTER" layoutY="105.0" prefHeight="32.0" prefWidth="567.0" text="Nomre del padre" textAlignment="CENTER">
+			<font>
+				<Font name="Comic Sans MS" size="17.0" />
+			</font>
+		</Label>
+		<RadioButton fx:id="btnSexoM" layoutX="320.0" layoutY="285.0" mnemonicParsing="false" selected="true" text="niña">
+			<font>
+				<Font name="Comic Sans MS" size="15.0" />
+			</font>
+			<toggleGroup>
+				<ToggleGroup fx:id="sexo" />
+			</toggleGroup>
+		</RadioButton>
+		<RadioButton fx:id="btnSexoH" layoutX="198.0" layoutY="285.0" mnemonicParsing="false" text="niño" toggleGroup="$sexo">
+			<font>
+				<Font name="Comic Sans MS" size="15.0" />
+			</font>
+		</RadioButton>
+		<Button fx:id="btnQuitar" layoutX="309.0" layoutY="417.0" mnemonicParsing="false" onAction="#quitarVentana" text="Quitar">
+			<font>
+				<Font name="Comic Sans MS" size="15.0" />
+			</font>
+		</Button>
+		<Label fx:id="lblErrorComboBox" alignment="CENTER" layoutY="375.0" onMouseClicked="#errorPresionado" prefHeight="32.0" prefWidth="567.0" text="Label" textFill="RED" visible="false">
+			<font>
+				<Font name="Comic Sans MS" size="15.0" />
+			</font>
+		</Label>
+	</children>
+</AnchorPane>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 03-ene-2020 16:46:17 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="biblioteca.Persona" table="PERSONA">
+        <id name="dni" type="int">
+            <column name="DNI" />
+            <generator class="assigned" />
+        </id>
+        <property name="nomPersona" type="java.lang.String">
+            <column name="NOMPERSONA" />
+        </property>
+        <property name="telefon" type="int">
+            <column name="TELEFON" />
+        </property>
+    </class>
+</hibernate-mapping>

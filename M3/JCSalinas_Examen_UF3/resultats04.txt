@@ -1,0 +1,3 @@
+jugador4 jugador6 Tiradas_jugador4: 12  Tiradas_jugador6: 7  
+jugador5 jugador2 Tiradas_jugador5: 9  Tiradas_jugador2: 5  
+jugador1 jugador3 Tiradas_jugador1: 11  Tiradas_jugador3: 6  

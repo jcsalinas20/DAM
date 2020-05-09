@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 12-ene-2020 20:14:37 by Hibernate Tools 5.4.7.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="vuelos" dynamic-insert="false" dynamic-update="false" mutable="true" name="objetos.Vuelo" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="vuelo">
+        <id name="identificador" type="string">
+            <column length="10" name="IDENTIFICADOR"/>
+            <generator class="assigned"/>
+        </id>
+        <property generated="never" lazy="false" name="aeropuertoOrigen" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="AEROPUERTO_ORIGEN"/>
+        </property>
+        <property generated="never" lazy="false" name="aeropuertoDestino" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="AEROPUERTO_DESTINO"/>
+        </property>
+        <property generated="never" lazy="false" name="tipoVuelo" optimistic-lock="true" type="string" unique="false">
+            <column length="15" name="TIPO_VUELO"/>
+        </property>
+        <property generated="never" lazy="false" name="fechaVuelo" optimistic-lock="true" type="date" unique="false">
+            <column length="10" name="FECHA_VUELO"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="pasajes" optimistic-lock="true" sort="unsorted" table="pasaje">
+            <key on-delete="noaction">
+                <column length="10" name="IDENTIFICADOR" not-null="true"/>
+            </key>
+            <one-to-many class="objetos.Pasaje" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="tripulacions" optimistic-lock="true" sort="unsorted" table="tripulacion">
+            <key on-delete="noaction">
+                <column length="10" name="VUELO_IDENTIFICADOR" not-null="true"/>
+            </key>
+            <one-to-many class="objetos.Tripulacion" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>

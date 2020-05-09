@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="enviar">Ingresar nombre</string>
+    <string name="dialog_ingrsae_nombre">Into</string>
+</resources>

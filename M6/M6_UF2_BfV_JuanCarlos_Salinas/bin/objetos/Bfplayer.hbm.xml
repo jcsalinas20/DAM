@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 20-ene-2020 17:53:45 by Hibernate Tools 5.4.7.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="bv" dynamic-insert="false" dynamic-update="false" mutable="true" name="objetos.Bfplayer" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="bfplayer">
+        <id name="userId" type="string">
+            <column length="15" name="user_id"/>
+            <generator class="assigned"/>
+        </id>
+        <property generated="never" lazy="false" name="classId" optimistic-lock="true" type="int" unique="false">
+            <column name="class_id" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="primaryWeapon" optimistic-lock="true" type="int" unique="false">
+            <column name="primary_weapon" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="device1" optimistic-lock="true" type="int" unique="false">
+            <column name="device1" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="kills" optimistic-lock="true" type="int" unique="false">
+            <column name="kills" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="deads" optimistic-lock="true" type="int" unique="false">
+            <column name="Deads" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

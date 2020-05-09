@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 03-ene-2020 16:46:17 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="biblioteca.Llibre" table="LLIBRE">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="nomLlibre" type="java.lang.String">
+            <column name="NOMLLIBRE" />
+        </property>
+        <property name="editorial" type="java.lang.String">
+            <column name="EDITORIAL" />
+        </property>
+        <property name="autor" type="java.lang.String">
+            <column name="AUTOR" />
+        </property>
+    </class>
+</hibernate-mapping>

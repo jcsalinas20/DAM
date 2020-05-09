@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="mongo-java-driver-3.12.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Proyectos/Downloads/paapi5-java-sdk-example/dependencies/commons-codec-1.11.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Proyectos/Downloads/paapi5-java-sdk-example/dependencies/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Proyectos/Downloads/paapi5-java-sdk-example/dependencies/gson-2.8.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Proyectos/Downloads/paapi5-java-sdk-example/dependencies/gson-fire-1.8.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Proyectos/Downloads/paapi5-java-sdk-example/dependencies/hamcrest-core-1.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Proyectos/Downloads/paapi5-java-sdk-example/dependencies/httpclient-4.5.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Proyectos/Downloads/paapi5-java-sdk-example/dependencies/httpcore-4.4.9.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Proyectos/Downloads/paapi5-java-sdk-example/dependencies/jackson-annotations-2.9.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Proyectos/Downloads/paapi5-java-sdk-example/dependencies/jackson-core-2.9.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Proyectos/Downloads/paapi5-java-sdk-example/dependencies/jackson-core-asl-1.9.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Proyectos/Downloads/paapi5-java-sdk-example/dependencies/jackson-databind-2.9.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Proyectos/Downloads/paapi5-java-sdk-example/dependencies/jackson-mapper-asl-1.9.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Proyectos/Downloads/paapi5-java-sdk-example/dependencies/jackson-xc-1.9.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Proyectos/Downloads/paapi5-java-sdk-example/dependencies/jackson-xml-databind-0.6.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Proyectos/Downloads/paapi5-java-sdk-example/dependencies/json-20180130.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Proyectos/Downloads/paapi5-java-sdk-example/dependencies/junit-4.12.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Proyectos/Downloads/paapi5-java-sdk-example/dependencies/logging-interceptor-2.7.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Proyectos/Downloads/paapi5-java-sdk-example/dependencies/okhttp-2.7.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Proyectos/Downloads/paapi5-java-sdk-example/dependencies/okio-1.6.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Proyectos/Downloads/paapi5-java-sdk-example/dependencies/paapi5-java-sdk-1.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Proyectos/Downloads/paapi5-java-sdk-example/dependencies/stax2-api-3.1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Proyectos/Downloads/paapi5-java-sdk-example/dependencies/stax-api-1.0-2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Proyectos/Downloads/paapi5-java-sdk-example/dependencies/swagger-annotations-1.5.15.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Proyectos/Downloads/paapi5-java-sdk-example/dependencies/threetenbp-1.3.5.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="482.0" prefWidth="1017.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Subscripciones">
+   <children>
+      <MenuBar AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <menus>
+            <Menu mnemonicParsing="false" text="Añadir">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#menuOptionCliente" text="Cliente" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Ver">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Subscripciones" />
+                  <MenuItem mnemonicParsing="false" onAction="#mostrarInformeCliente" text="Informe Cliente" />
+                  <MenuItem mnemonicParsing="false" onAction="#mostrarInformeProductos" text="Informe Productos" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Opciones">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#menuOptionExit" text="Exit" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <TableView fx:id="tabla" editable="true" layoutX="188.0" layoutY="141.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+        <columns>
+          <TableColumn fx:id="id" editable="false" prefWidth="38.0" text="Id" />
+          <TableColumn fx:id="nombre" prefWidth="102.0" text="Nombre" />
+            <TableColumn fx:id="apellidos" prefWidth="110.0" text="Apellidos" />
+            <TableColumn fx:id="email" prefWidth="111.0" text="Email" />
+            <TableColumn fx:id="telefono" minWidth="0.0" prefWidth="102.0" text="Telefono" />
+            <TableColumn fx:id="sexo" prefWidth="41.0" text="Sexo" />
+            <TableColumn fx:id="direccion" prefWidth="152.0" text="Direccion" />
+            <TableColumn fx:id="cp" prefWidth="70.0" text="CP" />
+            <TableColumn fx:id="provincia" prefWidth="104.0" text="Provincia" />
+            <TableColumn fx:id="localidad" prefWidth="99.0" text="Localidad" />
+            <TableColumn fx:id="recibirCaja" prefWidth="84.0" text="Recibir Caja" />
+        </columns>
+      </TableView>
+      <Button alignment="CENTER" layoutX="483.0" layoutY="452.0" mnemonicParsing="false" onAction="#mostrarHijos" text="Mostrar Hijos" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="508.0" AnchorPane.topAnchor="452.0">
+         <font>
+            <Font name="Comic Sans MS Italic" size="16.0" />
+         </font>
+      </Button>
+      <Button alignment="CENTER" layoutX="493.0" layoutY="462.0" mnemonicParsing="false" onAction="#eliminarCliente" text="Eliminar Cliente" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="508.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="452.0">
+         <font>
+            <Font name="Comic Sans MS Italic" size="16.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

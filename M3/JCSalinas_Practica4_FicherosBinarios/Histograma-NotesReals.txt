@@ -1,0 +1,6 @@
+Histograma de NotesReals.txt
+
+Suspendidos: ****
+Aprobados: **
+Notables: **
+Excelentes: **

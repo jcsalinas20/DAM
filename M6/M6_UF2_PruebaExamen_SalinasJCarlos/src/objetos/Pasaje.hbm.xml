@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 12-ene-2020 20:14:37 by Hibernate Tools 5.4.7.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="vuelos" dynamic-insert="false" dynamic-update="false" mutable="true" name="objetos.Pasaje" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="pasaje">
+        <composite-id class="objetos.PasajeId" mapped="false" name="id" unsaved-value="undefined">
+            <key-property name="pasajeroCod" type="short">
+                <column name="PASAJERO_COD"/>
+            </key-property>
+            <key-property name="identificador" type="string">
+                <column length="10" name="IDENTIFICADOR"/>
+            </key-property>
+        </composite-id>
+        <many-to-one class="objetos.Pasajero" embed-xml="true" fetch="select" insert="false" name="pasajero" not-found="exception" optimistic-lock="true" unique="false" update="false">
+            <column name="PASAJERO_COD" not-null="true"/>
+        </many-to-one>
+        <many-to-one class="objetos.Vuelo" embed-xml="true" fetch="select" insert="false" name="vuelo" not-found="exception" optimistic-lock="true" unique="false" update="false">
+            <column length="10" name="IDENTIFICADOR" not-null="true"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="numasiento" optimistic-lock="true" type="java.lang.Short" unique="false">
+            <column name="NUMASIENTO"/>
+        </property>
+        <property generated="never" lazy="false" name="clase" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="CLASE"/>
+        </property>
+        <property generated="never" lazy="false" name="pvp" optimistic-lock="true" type="java.lang.Float" unique="false">
+            <column name="PVP" precision="12" scale="0"/>
+        </property>
+    </class>
+</hibernate-mapping>

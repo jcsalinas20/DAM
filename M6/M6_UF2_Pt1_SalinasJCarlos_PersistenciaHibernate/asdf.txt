@@ -1,0 +1,91 @@
+package main;
+
+import java.util.List;
+import java.util.Scanner;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import biblioteca.Autor;
+import biblioteca.Biblioteca;
+import biblioteca.Llibre;
+import biblioteca.Persona;
+import persistencia.Hibernateutil;
+
+public class HibernateManager {
+
+//	private static Session session;
+//	private static Scanner lector = new Scanner(System.in);
+//
+//	public static void main(String[] args) {
+//		session = Hibernateutil.getSessionFactory().openSession();
+//		Transaction transaction = session.beginTransaction();
+
+//		mostrarBaseDeDatos();
+
+//		pressEnter("introducir datos");
+//		insertar();
+//		transaction.commit();
+
+//		mostrarBaseDeDatos();
+
+//		pressEnter("eliminar datos");
+//		eliminar();
+//		transaction.commit();
+
+//		mostrarBaseDeDatos();
+
+//		session.close();
+//		System.exit(0);
+//	}
+
+//	private static void eliminar() {
+//
+//	}
+
+//	private static void insertar() {
+//		objetosPersona(14521452, "Pedro", 478569852);
+//		objetosPersona(36985214, "Eric", 589632147);
+//		objetosBiblioteca(20, "Biblioteca Virtual");
+//		objetosLlibre(521, "Harry Potter y el prisionero de Azkaban", "Narrativa Joven",
+//				"J.K. Rowling");
+//		objetosLlibre(522, "Harry Potter y el cáliz de fuego", "Narrativa Joven",
+//				"J.K. Rowling");
+//		objetosAutor(150, "J.K. Rowling");
+//	}
+
+//	private static void objetosAutor(int id, String autor) {
+//		Autor a = new Autor(id, autor);
+//		session.save(a);
+//	}
+//
+//	private static void objetosLlibre(int id, String titulo, String editoril, String autor) {
+//		Llibre libro = new Llibre(id, titulo, editoril, autor);
+//		session.save(libro);
+//	}
+//
+//	private static void objetosBiblioteca(int id, String nom) {
+//		Biblioteca biblio = new Biblioteca(id, nom);
+//		session.save(biblio);
+//	}
+//
+//	private static void objetosPersona(int dni, String nombre, int tel) {
+//		System.out.println(dni);
+//		Persona persona = new Persona(dni, nombre, tel);
+//		session.save(persona);
+//	}
+
+//	private static void mostrarBaseDeDatos() {
+//		Query query = session.createQuery("from persona");
+//		List list = query.list();
+//		for (int i = 0; i < list.size(); i++) {
+//			System.out.println(list.get(i));
+//		}
+//	}
+
+//	private static void pressEnter(String text) {
+//		System.out.println("Pulsa Enter para " + text + "...\n");
+//		lector.nextLine();
+//	}
+
+}
