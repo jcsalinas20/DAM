@@ -1,4 +1,4 @@
-# Base de Datos Oracle
+# Base de Datos
 
 ### Estructuras y Diagramas
 ### Oracle SQL
