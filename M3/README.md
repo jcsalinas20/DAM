@@ -1,4 +1,4 @@
-# Java para Principiantes
+# Java
 
 ### Estrcturas Básicas
 ### Recursividad
